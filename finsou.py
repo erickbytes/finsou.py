@@ -43,13 +43,16 @@ def yahoo_finance_prices(url, stock):
     # Calculate market open price from day change and close price.
     if "+" in daily_price_change:
         delta = float(daily_price_change.replace("+", "").strip())
-        # open_price = sum([mkt_close_price, daily_price_change])
-        print((mkt_close_price, delta))
         open_price = float(mkt_close_price) - delta
     if "-" in daily_price_change:
         delta = float(daily_price_change.replace("-", "").strip())
         open_price = float(mkt_close_price) + delta
-    summary = f"""Market Price $ Open: {round(open_price, 2)}
+    try:
+        round(open_price, 2)
+    except UnboundLocalError:
+        # Catch flat 0 change stocks. Attempting to round zero error.
+        open_price = 0
+    summary = f"""Market Price $ Open: {open_price}
     Regular Market $ Close: {mkt_close_price}
     Daily % Change: {daily_pct_change}
     Daily $ Change: {daily_price_change}
@@ -59,24 +62,20 @@ def yahoo_finance_prices(url, stock):
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
     summary = "\n".join(lines)
     print(summary)
-    time.sleep(2)  # Added time delay between each request.
+    # Added time delay between each request to avoid too many hits too fast.
+    time.sleep(2)  
     return summary
 
 
 parser = argparse.ArgumentParser(
     prog="finsou.py",
     description="Summarize prices from Yahoo website.",
-    epilog="fin soup... yum yum yum yum",
+    epilog="fin soup... yum yum yum yum\n-s accepts stock ticker comma delimited list.",
 )
-parser.add_argument("-c", "--csv")  # option that takes a value
+parser.add_argument("-s", "--stocks", help="comma delited string of stocks") 
+parser.add_argument("-c", "--csv", help='"CSVNAME.csv"')
 args = parser.parse_args()
-stocks = [
-    "OKTA",
-    "NVDA",
-    "TSLA",
-    "MSFT",
-    "NKE",
-]
+stocks = args.stocks.split(",") 
 prices = list()
 for stock in stocks:
     print(stock)

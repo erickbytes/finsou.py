@@ -1,0 +1,22 @@
+Stock,Post_Market_Close,URL
+TSLA,"Market Price $ Open: 160.31
+Regular Market $ Close: 160.61
+Daily % Change: (+0.19%)
+Daily $ Change: +0.30
+Post Market $ Close: 161.79
+After Hours % Change: (+0.73%)
+After Hours $ Change: +1.18",https://finance.yahoo.com/quote/TSLA/
+MSFT,"Market Price $ Open: 305.41
+Regular Market $ Close: 304.40
+Daily % Change: (-0.33%)
+Daily $ Change: -1.01
+Post Market $ Close: 305.00
+After Hours % Change: (+0.20%)
+After Hours $ Change: +0.60",https://finance.yahoo.com/quote/MSFT/
+NET,"Market Price $ Open: 42.88
+Regular Market $ Close: 41.90
+Daily % Change: (-2.29%)
+Daily $ Change: -0.98
+Post Market $ Close: 41.40
+After Hours % Change: (-1.19%)
+After Hours $ Change: -0.50",https://finance.yahoo.com/quote/NET/
