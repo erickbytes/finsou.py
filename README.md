@@ -1,4 +1,4 @@
-# finsoup
+# finsoupy
 
 Uses Python's html.parser + Beautiful Soup + regex to parse Yahoo price info.
 
