@@ -14,7 +14,8 @@ python finsou.py --stocks "TSLA,MSFT,AAPL" --csv "Prices Summary.csv"
 
 **CLI Options**
 
-  -s, --stocks 	comma delited string of stocks
-  -c, --csv 	write csv summary to given file, ex: "csv_name.csv"
-  -h, --help    show help message and exit
-
+| Arg  | Alt. Arg  | Info     											`|
+|-----:|-----------|------------------------------------------------------|
+|   -s | --stocks  | comma delited string of stocks   					  |
+|   -c | --csv     | write csv summary to given file, ex: "csv_name.csv"  |
+|   -h | --help    | show help message and exit  						  |
