@@ -48,7 +48,7 @@ def yahoo_finance_prices(url, stock):
         delta = float(daily_price_change.replace("-", "").strip())
         open_price = float(mkt_close_price) + delta
     try:
-        round(open_price, 2)
+        open_price = round(open_price, 2)
     except UnboundLocalError:
         # Catch flat 0 change stocks. Attempting to round zero error.
         open_price = 0
