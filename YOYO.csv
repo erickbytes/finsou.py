@@ -1,0 +1,36 @@
+Stock,Post_Market_Close,URL
+OKTA,"Market Price $ Open: 70.28
+Regular Market $ Close: 70.15
+Daily % Change: (-0.18%)
+Daily $ Change: -0.13
+Post Market $ Close: 70.11
+After Hours % Change: (-0.06%)
+After Hours $ Change: -0.04",https://finance.yahoo.com/quote/OKTA/
+NVDA,"Market Price $ Open: 282.1
+Regular Market $ Close: 278.02
+Daily % Change: (-1.45%)
+Daily $ Change: -4.08
+Post Market $ Close: 276.79
+After Hours % Change: (-0.44%)
+After Hours $ Change: -1.23",https://finance.yahoo.com/quote/NVDA/
+TSLA,"Market Price $ Open: 160.31
+Regular Market $ Close: 160.61
+Daily % Change: (+0.19%)
+Daily $ Change: +0.30
+Post Market $ Close: 161.79
+After Hours % Change: (+0.73%)
+After Hours $ Change: +1.18",https://finance.yahoo.com/quote/TSLA/
+MSFT,"Market Price $ Open: 305.41
+Regular Market $ Close: 304.40
+Daily % Change: (-0.33%)
+Daily $ Change: -1.01
+Post Market $ Close: 305.00
+After Hours % Change: (+0.20%)
+After Hours $ Change: +0.60",https://finance.yahoo.com/quote/MSFT/
+NKE,"Market Price $ Open: 127.26
+Regular Market $ Close: 126.74
+Daily % Change: (-0.41%)
+Daily $ Change: -0.52
+Post Market $ Close: 125.72
+After Hours % Change: (-0.80%)
+After Hours $ Change: -1.02",https://finance.yahoo.com/quote/NKE/

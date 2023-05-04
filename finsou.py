@@ -1,8 +1,9 @@
+import argparse
+import time
 import re
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import time
 
 
 def yahoo_finance_prices(url, stock):
@@ -62,6 +63,13 @@ def yahoo_finance_prices(url, stock):
     return summary
 
 
+parser = argparse.ArgumentParser(
+    prog="finsou.py",
+    description="Summarize prices from Yahoo website.",
+    epilog="fin soup... yum yum yum yum",
+)
+parser.add_argument("-c", "--csv")  # option that takes a value
+args = parser.parse_args()
 stocks = [
     "OKTA",
     "NVDA",
@@ -79,5 +87,6 @@ for stock in stocks:
         print(f"Error getting summary for {stock}")
         summary = "N/A"
     prices.append([stock, summary, url])
-stock_prices = pd.DataFrame(prices, columns=["Stock", "Post_Market_Close", "URL"])
-stock_prices.to_csv("Yahoo Stock Prices.csv", index=False)
+if args.csv:
+    stock_prices = pd.DataFrame(prices, columns=["Stock", "Post_Market_Close", "URL"])
+    stock_prices.to_csv(args.csv, index=False)
