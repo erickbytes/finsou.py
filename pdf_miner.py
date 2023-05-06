@@ -19,14 +19,6 @@ def extract_links(url):
     return list(set(urls))
 
 
-def regex_links(soup):
-    page = requests.get(url).text
-    soup = BeautifulSoup(page, "html.parser")
-    attrs = {"href": re.compile(r"\s27$")}
-    hrefs = soup.find_all("a", attrs=attrs, string=re.compile(r"^((?!\().)*$"))
-    return hrefs
-
-
 def download(obj_url, path):
     """The urllib urlretrieve function copies a network object to local file.
     The second argument, if present, specifies the file location to copy to.
@@ -60,11 +52,6 @@ def prefix_domain(stock, urls):
     if stock == "LCID":
         urls = [f"https://ir.lucidmotors.com{url}" for url in urls]
     return urls
-
-def google_finance(url):
-    page = requests.get(url).text
-    soup = BeautifulSoup(page, "html.parser")
-    soup.find_all(attrs={"data-last-price":""})
 
 
 investor_urls = {
