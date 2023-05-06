@@ -13,7 +13,6 @@ Example Stock Summary
 
 TSLA
 
-200
 MONSTER BREAKOUT!
 Market Price $ Open: 161.2
 Regular Market $ Close: 170.06
@@ -26,17 +25,17 @@ https://finance.yahoo.com/quote/TSLA/
 ```
 **CLI Options**
 
-| Arg  | Alt. Arg  | Description										     |
-|-----:|-----------|---------------------------------------------------------|
-|   -s | --stocks  | comma delited string of stocks   					     |
-|   -c | --csv     | write csv summary to given file, ex: "csv_name.csv"     |
-|   -r | --research| accepts invesor resources url, downloads PDF, docx, mp3 |
-|   -h | --help    | show help message and exit  						     |
+| Arg  | Alt. Arg  | Description										                         |
+|-----:|-----------|-----------------------------------------------------------------------------|
+|   -s | --stocks  | accepts stock ticker, comma delited string of stocks or portfolio.txt	     |
+|   -c | --csv     | write csv summary to given file, ex: "csv_name.csv"                         |
+|   -r | --research| accepts invesor resources url, downloads PDF, docx, mp3                     |
+|   -h | --help    | show help message and exit  						                         |
 
 **Examples**
 ```
 # Summarize a list of stocks.
-python finsou.py -s "SPOT,GOOG,NET"
+python finsou.py -s "SPOT,DDOG,NET"
 
 # Write price summaries to csv.
 python finsou.py --stocks "TSLA,MSFT,AAPL" --csv "Prices Summary.csv"
@@ -46,7 +45,6 @@ python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
 
 # Crawl an investor relations website for documents.
 python finsou.py --research https://investors.coca-colacompany.com/
-
 ```
 Example portfolio.txt contents:
 ```
