@@ -8,7 +8,7 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 
 **Example Stock Summary**
 ```
->>> python finsou.py -s "TSLA"
+python finsou.py -s "TSLA"
 
 TSLA
 
@@ -28,7 +28,7 @@ https://finance.yahoo.com/quote/TSLA/
 |-----:|-----------|-----------------------------------------------------------------------------|
 |   -s | --stocks  | accepts stock ticker, comma delited string of stocks or portfolio.txt	     |
 |   -c | --csv     | write csv summary to given file, ex: "csv_name.csv"                         |
-|   -r | --research| accepts investor resources url, downloads PDF, docx, mp3                    |
+|   -r | --research| accepts investor resources url, downloads PDF, docx, csv, xlsx + mp3        |
 |   -h | --help    | show help message and exit  						                         |
 
 **Examples**
