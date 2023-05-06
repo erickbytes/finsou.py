@@ -35,11 +35,13 @@ def yahoo_finance_prices(url, stock):
     mkt_close_price = mkt_close_price.replace(",", "")
     price_change_tags = soup.find_all(class_=re.compile("Fw\(500\)"))
     price_change_tags = [span for span in price_change_tags if span.string is not None]
-    price_change_tags = [span.string for span in price_change_tags if "+" in span.string or "-" in span.string]
-    #price_change_tags = [value for value in price_change_tags if "+" in value or "-" in value]
+    price_change_tags = [
+        span.string
+        for span in price_change_tags
+        if "+" in span.string or "-" in span.string
+    ]
     daily_price_change = price_change_tags[0].replace("(", "").replace(")", "").strip()
     daily_pct_change = price_change_tags[1].replace("(", "").replace(")", "").strip()
-    # Display message if stonk had a big daily move.
     percent = (
         daily_pct_change.replace("-", "")
         .replace("+", "")
@@ -49,6 +51,7 @@ def yahoo_finance_prices(url, stock):
         .strip()
     )
     info = list()
+    # Display message if stonk had a big daily move.
     if "+" in daily_pct_change and float(percent) > 4:
         info.append("MONSTER BREAKOUT DAY!")
     elif "-" in daily_pct_change and float(percent) > 4:
@@ -105,7 +108,9 @@ parser = argparse.ArgumentParser(
     description="Summarize prices from Yahoo website.",
     epilog="fin soup... yum yum yum yum",
 )
-parser.add_argument("-s", "--stocks", help="comma delited string of stocks or portfolio.txt")
+parser.add_argument(
+    "-s", "--stocks", help="comma delited string of stocks or portfolio.txt"
+)
 parser.add_argument("-c", "--csv", help='"CSVNAME.csv"')
 args = parser.parse_args()
 if ".txt" in args.stocks:
@@ -119,15 +124,14 @@ prices = list()
 for stock in stocks:
     print(f"\n{stock}\n")
     url = f"https://finance.yahoo.com/quote/{stock}/"
-    summary = yahoo_finance_prices(url, stock)
-    #try:
-    #    summary = yahoo_finance_prices(url, stock)
-    #except IndexError:
-    #    print(f"Error getting summary for {stock}")
-    #    summary = "N/A"
-    #except AttributeError:
-    #    print(f"Failed to get stock price for {stock}")
-    #    continue
+    try:
+        summary = yahoo_finance_prices(url, stock)
+    except IndexError:
+        print(f"Error getting summary for {stock}")
+        summary = "N/A"
+    except AttributeError:
+        print(f"Failed to get stock price for {stock}")
+        continue
     prices.append([stock, summary, url])
     print(url)
     # Added time delay between each request to avoid too many hits too fast.
