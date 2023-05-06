@@ -28,7 +28,7 @@ https://finance.yahoo.com/quote/TSLA/
 |-----:|-----------|-----------------------------------------------------------------------------|
 |   -s | --stocks  | accepts stock ticker, comma delited string of stocks or portfolio.txt	     |
 |   -c | --csv     | write csv summary to given file, ex: "csv_name.csv"                         |
-|   -r | --research| accepts invesor resources url, downloads PDF, docx, mp3                     |
+|   -r | --research| accepts investor resources url, downloads PDF, docx, mp3                    |
 |   -h | --help    | show help message and exit  						                         |
 
 **Examples**
@@ -47,7 +47,7 @@ python finsou.py -s KO --research https://investors.coca-colacompany.com/
 ```
 **Example portfolio.txt contents:**
 ```
-TSLA
 MSFT
-AAPL
+FUBO
+CROX
 ```

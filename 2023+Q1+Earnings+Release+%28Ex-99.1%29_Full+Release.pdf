@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <!-- OneTrust Cookies Consent Notice start for investors.coca-colacompany.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="ebbed70e-0f06-447c-88e2-911b43af0a09" ></script>
+    <script type="text/javascript">
+        function OptanonWrapper () {
+            if (OneTrust.IsAlertBoxClosed() === false) {
+              var prefpc = document.getElementById("onetrust-pc-sdk");
+              var filter = document.getElementsByClassName("onetrust-pc-dark-filter")[0];
+              var style = document.createElement('style');
+              style.innerHTML = '#onetrust-banner-sdk {display:none !important}';
+              document.head.appendChild(style);
+              prefpc.style = 'display: block !important; animation: example1 3s linear';
+              filter.style = 'display: block !important';
+            }
+            var floatingButtonOpen=document.getElementsByClassName("ot-floating-button__open")[0];
+            floatingButtonOpen.innerHTML='<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve"><g><path class="st0" d="M29.67,7.41c-0.51,0-0.92-0.41-0.92-0.91c0-0.5,0.41-0.91,0.92-0.91C30.18,5.6,30.6,6,30.6,6.5 C30.6,7.01,30.18,7.41,29.67,7.41 M25.59,11.16c0.83,0,1.5-0.66,1.5-1.48c0-0.82-0.67-1.48-1.5-1.48c-0.83,0-1.5,0.66-1.5,1.48 C24.09,10.5,24.76,11.16,25.59,11.16 M32,13.88c0-0.5-0.41-0.91-0.92-0.91c-0.51,0-0.92,0.41-0.92,0.91c0,0.5,0.41,0.91,0.92,0.91 C31.59,14.79,32,14.38,32,13.88 M15.55,31.97c8.26,0,15.01-6.34,15.52-14.34c-1.88-0.49-3.35-1.98-3.78-3.87 c-3.11-0.16-5.58-2.69-5.58-5.79c0-0.26,0.02-0.52,0.05-0.77c-2.07-0.76-3.55-2.73-3.55-5.03c0-0.2,0.01-0.4,0.03-0.6 c-0.88-0.15-1.78-0.23-2.71-0.23C6.96,1.34,0,8.2,0,16.65C0,25.11,6.96,31.97,15.55,31.97 M22.72-0.03c-1.01,0-1.83,0.81-1.83,1.8 s0.82,1.8,1.83,1.8c1.01,0,1.83-0.81,1.83-1.8S23.73-0.03,22.72-0.03"/><path class="st1" d="M7.06,17.17c1.02,0,1.85,0.81,1.85,1.82c0,1.01-0.83,1.82-1.85,1.82c-1.02,0-1.85-0.81-1.85-1.82 C5.21,17.98,6.04,17.17,7.06,17.17 M10.76,8.46c-1.02,0-1.85,0.81-1.85,1.82c0,1.01,0.83,1.82,1.85,1.82 c1.02,0,1.85-0.81,1.85-1.82C12.6,9.28,11.78,8.46,10.76,8.46 M14.45,24.52c0-1-0.83-1.82-1.85-1.82c-1.02,0-1.85,0.81-1.85,1.82 c0,1,0.83,1.82,1.85,1.82C13.62,26.34,14.45,25.53,14.45,24.52 M18.23,12.33c-1.02,0-1.85,0.81-1.85,1.82 c0,1.01,0.83,1.82,1.85,1.82c1.02,0,1.85-0.81,1.85-1.82C20.07,13.14,19.25,12.33,18.23,12.33 M23.75,20.36 c-1.02,0-1.85,0.81-1.85,1.82c0,1.01,0.83,1.82,1.85,1.82c1.02,0,1.85-0.81,1.85-1.82C25.59,21.18,24.77,20.36,23.75,20.36"/></g></svg>';
+            var floatingButtonClose=document.getElementsByClassName("ot-floating-button__close")[0];
+            floatingButtonClose.innerHTML='<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 18" style="enable-background:new 0 0 18 18;" xml:space="preserve"><path class="st0" d="M12.27,9l5.05-5.05c0.9-0.9,0.9-2.37,0-3.27c-0.9-0.9-2.37-0.9-3.27,0L9,5.73L3.95,0.68 c-0.9-0.9-2.37-0.9-3.27,0s-0.9,2.37,0,3.27L5.73,9l-5.05,5.05c-0.9,0.9-0.9,2.37,0,3.27c0.9,0.9,2.37,0.9,3.27,0L9,12.27l5.05,5.05 c0.9,0.9,2.37,0.9,3.27,0c0.9-0.9,0.9-2.37,0-3.27L12.27,9z"/></svg>';
+            var buttonSettings=document.getElementById("ot-sdk-btn-floating");
+            buttonSettings.title = "Cookie Settings";
+        }
+        {window.dispatchEvent(new Event('onetrustcookiebanner'))}
+    </script>
+<!-- OneTrust Cookies Consent Notice end for investors.coca-colacompany.com -->        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
+
+                <link rel="alternate" type="application/rss+xml" title="The Coca-Cola Company - Recent News" href="https://investors.coca-colacompany.com/news-events/press-releases/rss" />
+            
+        <title>Investor Relations :: The Coca-Cola Company (KO)</title>
+        
+        
+    <link rel="canonical" href="https://investors.coca-colacompany.com">
+    <meta property="og:url" content="https://investors.coca-colacompany.com">
+
+
+    <meta property="og:site_name" content="The Coca-Cola Company">
+    <meta property="og:title" content="Investor Relations">
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/725/5589/social_image_resized.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+        <meta name="viewport" content="initial-scale=1.0, width=device-width">
+                
+                <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700%7CLora:400,400i,700,700i" rel="stylesheet">
+        
+                    <link href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/css/ir.stockpr.css" rel="stylesheet" type="text/css" media="screen" />
+            <link rel="stylesheet" href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/css/style.css">
+                
+                <link rel="shortcut icon" href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="mask-icon" href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/favicons/safari-pinned-tab.svg">
+        <meta name="theme-color" content="#ffffff">  
+                
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-154007194-1', 'investors.coca-colacompany.com');
+    
+    (function() {
+        var opts = {};
+        var prefix = "/investors";
+        if (location.hostname.indexOf('stockpr.com') == 0) {
+            opts.cookiePath = location.pathname.substring(0, location.pathname.indexOf('/', 1) + 1)
+            opts.page = prefix + location.pathname.substring(location.pathname.indexOf('/', 1));
+        } else if (location.hostname.match(/^ir\./)) {
+            opts.page = prefix + location.pathname;
+        }
+        ga('send', 'pageview', opts);
+    })();
+    
+    /**
+        * Function that tracks a click on an outbound link in Analytics.
+        * This function takes a valid URL string as an argument, and uses that URL string
+        * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+        * using 'navigator.sendBeacon' in browser that support it.
+        */
+        var trackOutboundLink = function(url,category) {
+            if (!category) category = 'outbound';
+           ga('send', 'event', category, 'click', url, {
+             'transport': 'beacon'
+           });
+        }
+        
+         window.onload = function() {
+            // Add outbound link tracking in GA
+            jq('a').not('.fancybox').each(function(){
+                var href = jq(this).attr('href');
+                if (typeof href === "undefined") return;
+                if (href.indexOf('http') >= 0 
+                    && ( href.indexOf(website_base_url) < 0 && href.indexOf(ir_base_url) < 0 && href.indexOf('eqcdn') < 0 && href.indexOf('amazonaws') < 0)) {
+                    jq(this).attr('onclick', 'trackOutboundLink("' + href + '")');    
+                }else {
+                    // It's not an outbound link, but if it's a link to a file, we want to track that.
+                    if (href.match(/(\.pdf|\.jpg|\.png|\.gif|\.ppt|\.jpeg|\.mp3|\.mp4|\.wav|\.docx|\.doc|\.xsl|\.cslx)/g)) {
+                        jq(this).attr('onclick', 'trackOutboundLink("' + href + '", "documents-and-files")');
+                    }
+                }
+            });
+        };
+</script>
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWZC7WQ');</script>
+<!-- End Google Tag Manager -->
+        <!-- Google GA4 code (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6TCZ3H1FWF" class="optanon-category-C0004"></script>
+<script class="optanon-category-C0004">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'G-6TCZ3H1FWF');
+</script>
+<!-- END Google GA4 code (gtag.js) -->        
+    </head>
+<body class="pg-107607 page-type-ir-overview pg-overview-overview ">
+	<div class="general-wrapper">
+
+    	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWZC7WQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav class="sr-only">
+    <h2>Skip to Sections</h2>
+    <ul>
+        <li><a href="#mobile-nav">Navigation</a></li>
+        <li><a href="#content">Main Content</a></li>
+        <li><a href="#footer">Footer</a></li>
+    </ul>
+</nav>
+<header class="affixed" id="header">
+        <div class="container-fluid">
+		<h1 class="logo">
+	        <a href="https://www.coca-colacompany.com">
+	            <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/logo.svg" 
+                width="329"
+                height="54"
+                alt="The Coca-Cola Company">
+            </a>
+            <a href="https://investors.coca-colacompany.com">
+                <span class="tagline hidden-sm hidden-xs">Investors</span>
+           </a>
+		</h1>
+        <a class="visible-xs visible-sm mobile-nav-trigger" id="showRight">
+            <div class="meat"></div>
+            <div class="meat"></div>
+            <div class="meat"></div>
+        </a>
+		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right main-nav" id="mobile-nav">
+			<ul class="main-menu">
+    <li class="sr-only"><a href="/">Investors</a></li>
+        <li class="active active-landing" data-submenu-id="submenu-overview">
+        <a href="/" >Overview</a>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-about">
+        <a href="/about" >About</a>
+                    <ul id="submenu-about">
+                                    <li class="">
+                        <a href="/about" >Overview</a>
+                    </li>
+                                    <li class="">
+                        <a href="/about/our-purpose" >Our Purpose</a>
+                    </li>
+                                    <li class="has-children">
+                        <a href="/about/segments" >Segments</a>
+                    </li>
+                                    <li class="">
+                        <a href="/about/coca-cola-system" >Coca-Cola System</a>
+                    </li>
+                                    <li class="">
+                        <a href="/about/presentations" >Investor Overview Presentation</a>
+                    </li>
+                                    <li class="">
+                        <a href="https://www.coca-colacompany.com/company/leadership" >Coca-Cola Leaders</a>
+                    </li>
+                                    <li class="">
+                        <a href="/about/contacts" >Contacts</a>
+                    </li>
+                            </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-strategy">
+        <a href="/strategy" >Strategy</a>
+                    <ul id="submenu-strategy">
+                                    <li class="">
+                        <a href="/strategy" >Overview</a>
+                    </li>
+                                    <li class="">
+                        <a href="/strategy/vision" >Vision</a>
+                    </li>
+                                    <li class="">
+                        <a href="/strategy/growth-strategy" >Growth Strategy</a>
+                    </li>
+                                    <li class="">
+                        <a href="/strategy/sustainability" >Sustainability</a>
+                    </li>
+                                    <li class="">
+                        <a href="/strategy/financials" >Financials</a>
+                    </li>
+                            </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-news-events">
+        <a href="/news-events" >News &amp; Events</a>
+                    <ul id="submenu-news-events">
+                                    <li class="">
+                        <a href="/news-events" >Overview</a>
+                    </li>
+                                    <li class="">
+                        <a href="/news-events/press-releases" >Press Releases</a>
+                    </li>
+                                    <li class="">
+                        <a href="/financial-information/financial-results" >Earnings</a>
+                    </li>
+                                    <li class="">
+                        <a href="/news-events/events" >Events</a>
+                    </li>
+                                    <li class="">
+                        <a href="/news-events/email-alerts" >Email Alerts</a>
+                    </li>
+                            </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-financial-information">
+        <a href="/financial-information" >Financial Info</a>
+                    <ul id="submenu-financial-information">
+                                    <li class="">
+                        <a href="/financial-information" >Overview</a>
+                    </li>
+                                    <li class="">
+                        <a href="/financial-information/financial-results" >Financial Results</a>
+                    </li>
+                                    <li class="">
+                        <a href="/financial-information/non-gaap-reconciliations-and-supplemental-financial-information" >Non-GAAP and Supplemental</a>
+                    </li>
+                                    <li class="">
+                        <a href="/financial-information/balance-sheet" >Balance Sheet</a>
+                    </li>
+                                    <li class="">
+                        <a href="/financial-information/income-statement" >Income Statement</a>
+                    </li>
+                                    <li class="">
+                        <a href="/financial-information/cash-flow" >Cash Flow</a>
+                    </li>
+                            </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-stock-information">
+        <a href="/stock-information" >Stock Info</a>
+                    <ul id="submenu-stock-information">
+                                    <li class="">
+                        <a href="/stock-information" >Overview</a>
+                    </li>
+                                    <li class="">
+                        <a href="/stock-information/charts" >Charts</a>
+                    </li>
+                                    <li class="">
+                        <a href="/stock-information/dividends" >Dividends</a>
+                    </li>
+                                    <li class="">
+                        <a href="/stock-information/year-end-market-values" >Year-End</a>
+                    </li>
+                                    <li class="">
+                        <a href="/stock-information/splits" >Splits</a>
+                    </li>
+                                    <li class="">
+                        <a href="/stock-information/historical-data" >Historical Data</a>
+                    </li>
+                                    <li class="">
+                        <a href="/stock-information/authorized-share-history" >Share History</a>
+                    </li>
+                            </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-filings-reports">
+        <a href="/filings-reports" >Filings &amp; Reports</a>
+                    <ul id="submenu-filings-reports">
+                                    <li class="">
+                        <a href="/filings-reports/resource-center" >Resource Center</a>
+                    </li>
+                                    <li class="">
+                        <a href="/filings-reports/all-sec-filings" >All SEC Filings</a>
+                    </li>
+                                    <li class="">
+                        <a href="/filings-reports/annual-filings-10-k" >Annual Filings (10-K)</a>
+                    </li>
+                                    <li class="">
+                        <a href="/filings-reports/quarterly-filings-10-q" >Quarterly Filings (10-Q)</a>
+                    </li>
+                                    <li class="">
+                        <a href="/filings-reports/proxy-statements" >Proxy Statements</a>
+                    </li>
+                                    <li class="">
+                        <a href="/filings-reports/annual-reviews" >Annual Reviews</a>
+                    </li>
+                            </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-corporate-governance">
+        <a href="/corporate-governance" >Corporate Governance</a>
+                    <ul id="submenu-corporate-governance">
+                                    <li class="">
+                        <a href="/corporate-governance" >Overview</a>
+                    </li>
+                                    <li class="">
+                        <a href="/corporate-governance/board-of-directors" >Board of Directors</a>
+                    </li>
+                                    <li class="">
+                        <a href="/corporate-governance/board-committees" >Committees</a>
+                    </li>
+                                    <li class="">
+                        <a href="/corporate-governance/governance-documents" >Documents</a>
+                    </li>
+                                    <li class="">
+                        <a href="/corporate-governance/code-of-business-conduct" >Code of Conduct</a>
+                    </li>
+                                    <li class="">
+                        <a href="https://www.coca-colacompany.com/policies-and-practices/political-engagement-in-the-united-states" target="_blank">Political Engagement Policy</a>
+                    </li>
+                                    <li class="">
+                        <a href="/corporate-governance/report-accounting-issues" >Report Issues</a>
+                    </li>
+                                    <li class="">
+                        <a href="/corporate-governance/contact-the-board" >Contact</a>
+                    </li>
+                            </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-shareowners">
+        <a href="/shareowners" >Shareowners</a>
+                    <ul id="submenu-shareowners">
+                                    <li class="">
+                        <a href="/shareowners" >Overview</a>
+                    </li>
+                                    <li class="">
+                        <a href="/shareowners/annual-meeting-of-shareowners" >Annual Meeting of Shareowners</a>
+                    </li>
+                                    <li class="">
+                        <a href="/shareowners/faqs" >FAQs</a>
+                    </li>
+                                    <li class="">
+                        <a href="/shareowners/contact" >Contact</a>
+                    </li>
+                            </ul>
+            </li>
+        <li class="has-children" data-submenu-id="submenu-esg">
+        <a href="/esg" >Sustainability</a>
+                    <ul id="submenu-esg">
+                                    <li class="">
+                        <a href="https://www.coca-colacompany.com/esg-resource-center" >Sustainability & Governance Resource Center</a>
+                    </li>
+                                    <li class="">
+                        <a href="https://www.coca-colacompany.com/sustainability/water-stewardship" >Water Stewardship</a>
+                    </li>
+                                    <li class="">
+                        <a href="https://www.coca-colacompany.com/sustainability/packaging-sustainability" >Sustainable Packaging</a>
+                    </li>
+                                    <li class="">
+                        <a href="https://www.coca-colacompany.com/sustainability/climate" >Climate</a>
+                    </li>
+                                    <li class="">
+                        <a href="https://www.coca-colacompany.com/policies-and-practices" >Policies Practice and Report</a>
+                    </li>
+                            </ul>
+            </li>
+            <li class="visible-sm visible-xs"><a href="https://www.coca-colacompany.com" target="_blank">COCA-COLA.COM</a></li>
+</ul>		</nav>
+    </div>
+    <a href="https://www.coca-colacompany.com" class="btn back-to-main" target="_blank"><span>COCA-COLACOMPANY.COM</span> <span><img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/block-link-arrow-white.svg" alt=""></span></a>
+</header>
+<span class="tagline visible-sm visible-xs"><a href="https://investors.coca-colacompany.com">Investor Relations</a></span>
+
+
+<div class="ir-cta-home-slider grabbable">
+                        
+<div class="page-hero ir-hero overlay dark qr ir-cta-qr" style="background: url(https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/736/5798/background_image.jpg);background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;background-color: #333;">
+    <div class="container">
+        <div class="vertical-align">
+            <div class="wrapper">
+                <h4 class="head-title">Latest Financial Results</h4>
+                <div class="row">
+                    <div class="col-sm-6">
+                                            <div class="date">Apr 24, 2023 • 6:55 AM EDT</div>
+                                            <h3>Q1 2023 Quarterly Results</h3>
+                                            <p>Quarter Ended Mar 31, 2023</p>
+
+                                                                </div>
+                    <div class="col-sm-6">    
+						<div class="qr-links">
+						
+            <div class="result-line">
+            <!-- Use Earnings Release PDF -->
+            <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/734/7987/earnings_release/2023+Q1+Earnings+Release+%28Ex-99.1%29_Full+Release.pdf">
+                Earnings Release            </a>
+            <div class="pull-right">
+                <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/734/7987/earnings_release/2023+Q1+Earnings+Release+%28Ex-99.1%29_Full+Release.pdf"
+                   class="link"
+                   title="PDF: Coca-Cola Reports First Quarter 2023 Results"
+                   target="_blank">
+                   <span class="eqicon-PDF"></span> PDF
+                </a>
+            </div>
+            <!-- END Use Earnings Release PDF -->
+        </div>
+    
+    <div class="result-line">
+    <div class="pull-right">
+        <a href="https://events.q4inc.com/attendee/623162925" class="result-link link" target="_blank">
+          <span class="eqicon-MP3"></span> Audio
+        </a>
+    </div>
+    
+    <a href="https://events.q4inc.com/attendee/623162925" target="_blank">Earnings Webcast</a>
+</div>
+
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/734/7987/margin_analysis_schedule/Q1%2723+Margin+Analysis+Schedule.pdf" target="_blank">Margin Analysis Schedule</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/734/7987/margin_analysis_schedule/Q1%2723+Margin+Analysis+Schedule.pdf" target="_blank" title="Margin Analysis Schedule" class="link">
+          <span class="eqicon-PDF"></span> PDF        </a>
+    </div>
+</div>
+<div class="result-line">
+  <a href="/filings-reports/all-sec-filings/content/0000021344-23-000024/ko-20230331.htm" title="10-Q Filing Viewer" class="fancybox fancybox.iframe">10-Q <span class="sr-only">Filing</span></a>
+    <div class="pull-right">
+        <a href="/filings-reports/all-sec-filings/content/0000021344-23-000024/0000021344-23-000024.pdf" title="10-Q" class="link" target="_blank"><span class="eqicon-PDF"></span> PDF</a>
+        <a href="/filings-reports/all-sec-filings/content/0000021344-23-000024/ko-20230331.htm" title="10-Q Filing Viewer" class="link fancybox fancybox.iframe"><span class="eqicon-HTML"></span> HTML</a>
+    </div>
+</div><!-- XBRL -->
+<div class="result-line">
+    <a href="/filings-reports/all-sec-filings/xbrl_doc_only/3496" title="XBRL Viewer" target="_blank" class="fancybox fancybox.iframe">XBRL</a>
+    <div class="pull-right">
+        <a href="/filings-reports/all-sec-filings/content/0000021344-23-000024/0000021344-23-000024-xbrl.zip" title="Download Raw XBRL Files" class="link" target="_blank"><span class="eqicon-ZIP"></span> ZIP</a>
+        <a href="https://s3.amazonaws.com/content.stockpr.com/sec/0000021344-23-000024/Financial_Report.xlsx" title="XBRL Spreadsheet" class="link" target="_blank"><span class="eqicon-PDF"></span> XLS</a>
+        <a href="/filings-reports/all-sec-filings/xbrl_doc_only/3496" title="XBRL Viewer" class="link fancybox fancybox.iframe" target="_blank"><span class="eqicon-HTML"></span> HTML</a>
+    </div>
+</div>                            
+                            
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/764/7997/file/CORRECTED+TRANSCRIPT_+The+Coca-Cola+Co.%28KO-US%29%2C+Q1+2023+Earnings+Call%2C+24-April-2023+8_30+AM+ET.pdf" target="_blank">Transcript</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/764/7997/file/CORRECTED+TRANSCRIPT_+The+Coca-Cola+Co.%28KO-US%29%2C+Q1+2023+Earnings+Call%2C+24-April-2023+8_30+AM+ET.pdf" target="_blank" title="Transcript" class="link">
+          <span class="eqicon-PDF"></span> PDF        </a>
+    </div>
+</div>
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/764/7998/file/KO-US_04242023_2811262.mp3" target="_blank">Audio</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/764/7998/file/KO-US_04242023_2811262.mp3" target="_blank" title="Audio" class="link">
+          <span class="eqicon-MP3"></span> MP3        </a>
+    </div>
+</div>                        </div>
+						
+                                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                
+<div class="page-hero ir-hero overlay dark ir-cta-event-with-documents" style="background: url(https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/736/7905/background_image.jpg);background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;background-color: #333;">
+	<div class="container">
+        <div class="vertical-align">
+            <div class="wrapper text">
+                <div class="row">
+                    <div class="col-md-12 ir-cta-event-with-documents">
+                        <div class="col-md-6 event-with-documents-text">
+                            <!-- Override Title or Use Event Title -->
+                                                            <h2>CAGNY 2023 Conference</h2>
+                                                        <!-- Display Event Time if Exists -->
+                                                            <p class="date">Feb 21, 2023 • 10:00 am EDT</p>
+                                                        <!-- Display Link if Exists -->
+                                                            <a href="/news-events/events/detail/7963/cagny-2023-conference" target="_self" class="btn">View Event</a>
+                                                    </div>
+                        <div class="col-md-6 event-with-documents-files">
+                            <div class="quarterly-results event">
+
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/702/7974/file/The+Coca-Cola+Company+-+CAGNY+2023+%28with+Segments%29.pdf" target="_blank">Presentation</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/702/7974/file/The+Coca-Cola+Company+-+CAGNY+2023+%28with+Segments%29.pdf" target="_blank" title="Presentation" class="link">
+          <span class="eqicon-PDF"></span> PDF        </a>
+    </div>
+</div>
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/702/7975/file/CAGNY+GNG%27s.pdf" target="_blank">GAAP/Non-GAAP Schedules</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/702/7975/file/CAGNY+GNG%27s.pdf" target="_blank" title="GAAP/Non-GAAP Schedules" class="link">
+          <span class="eqicon-PDF"></span> PDF        </a>
+    </div>
+</div>
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/702/7977/file/CAGNY_2023.mp4" target="_blank">Webcast</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/702/7977/file/CAGNY_2023.mp4" target="_blank" title="Webcast" class="link">
+          <span class="eqicon-Audio"></span> Video        </a>
+    </div>
+</div>
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/702/7981/file/The+Coca-Cola+Co.%28KO-US%29%2C+Consumer+Analyst+Group+of+New+York+Conference%2C+21-February-2023+10_00+AM+ET.pdf" target="_blank">Transcript</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/702/7981/file/The+Coca-Cola+Co.%28KO-US%29%2C+Consumer+Analyst+Group+of+New+York+Conference%2C+21-February-2023+10_00+AM+ET.pdf" target="_blank" title="Transcript" class="link">
+          <span class="eqicon-PDF"></span> PDF        </a>
+    </div>
+</div></div>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                                                                                    </div>    	    <div id="content"></div>
+    	        	
+<div class="module no-padding-top active-badge" >
+	<div class="container">
+		<div class="row">
+					<div class="col-md-12 ">
+			    <div class="module-content">
+			        <div class="vertical-align text-area" data-mh="default">
+			            <div class="wrapper text">
+			            			                        				<p>&nbsp;</p>
+<h3>Latest Company Updates</h3>
+<p>&nbsp;</p>
+<h2 class="font-size--h3">2022 Business and Sustainability Report</h2>
+<p><a class="btn" href="https://www.coca-colacompany.com/content/dam/journey/us/en/reports/coca-cola-business-and-sustainability-report-2022.pdf" target="_blank" rel="noopener">View</a></p>
+<p>&nbsp;</p>
+<h3>ESG Overview</h3>
+<p><a class="btn" href="https://d1io3yog0oux5.cloudfront.net/cocacolacompany/files/pages/cocacolacompany/db/761/description/December_2022_ESG_Overview.pdf" target="_blank" rel="noopener">View</a></p>
+<p>&nbsp;</p>
+<!--<h3 class="font-size--h3">2020 Business and ESG Report</h3>
+<p><a class="btn" href="https://d1io3yog0oux5.cloudfront.net/cocacolacompany/files/pages/cocacolacompany/db/761/description/coca-cola-business-environmental-social-governance-report-2020+%282%29.pdf" target="_blank" rel="noopener">View</a></p>--> <!--<h3><h2 class="font-size--h3">Organizational Refresh Guide for Investors (Updated Sept, 2020)</h2>
+<p><a class="btn" href="https://d1io3yog0oux5.cloudfront.net/cocacolacompany/files/pages/cocacolacompany/db/761/description/Organizational_Refresh_Guide_KO_Sep+2020_v1.pdf" target="_blank" rel="noopener">View</a></p></h3>-->
+<h3>2021 World Without Waste Report</h3>
+<p><a class="btn" href="https://d1io3yog0oux5.cloudfront.net/cocacolacompany/files/pages/cocacolacompany/db/761/description/coca-cola-world-without-waste-report-2021.pdf" target="_blank" rel="noopener">View</a></p>            			            		    </div>
+                    </div>
+    		    </div>
+			</div>
+		</div>				
+	</div>
+</div>
+<div class="module module-latest-news-slider neutral-bg " >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="module-content default-content ">
+    <div class="row">
+        <div class="col-sm-12">
+                                    	<h3>Latest Press Releases</h3>                    </div><!--end col-->
+    </div><!--end row-->
+</div><!--end module-content-->
+                <div class="news-slider news-slider-5923">
+                                            <div class="news-block">
+                            <div class="text" data-mh="news-text-box">
+                                <time class="date" datetime="2023-05-03T09:00:00">May 3, 2023 • 9:00 AM EDT</time>
+                                <h3>
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/1083/sprite-spotlights-artists-untold-stories-in-sprite" data-mh="news-block">
+                                        Sprite Spotlights Artists&#039; Untold Stories in Sprite Limelight Season 2                                    </a>
+                                </h3>
+                                <div class="inline-btns">
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/1083/sprite-spotlights-artists-untold-stories-in-sprite" class="btn">View Press Release</a>
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases" class="btn">View All News</a>
+                                </div>
+                            </div>
+                        </div><!--end news-block-->
+                                            <div class="news-block">
+                            <div class="text" data-mh="news-text-box">
+                                <time class="date" datetime="2023-04-26T14:00:00">Apr 26, 2023 • 2:00 PM EDT</time>
+                                <h3>
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/1082/the-coca-cola-company-elects-three-officers-and-declares" data-mh="news-block">
+                                        The Coca-Cola Company Elects Three Officers and Declares Regular Quarterly Dividend                                    </a>
+                                </h3>
+                                <div class="inline-btns">
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/1082/the-coca-cola-company-elects-three-officers-and-declares" class="btn">View Press Release</a>
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases" class="btn">View All News</a>
+                                </div>
+                            </div>
+                        </div><!--end news-block-->
+                                            <div class="news-block">
+                            <div class="text" data-mh="news-text-box">
+                                <time class="date" datetime="2023-04-24T06:55:00">Apr 24, 2023 • 6:55 AM EDT</time>
+                                <h3>
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/1081/coca-cola-reports-first-quarter-2023-results" data-mh="news-block">
+                                        Coca-Cola Reports First Quarter 2023 Results                                    </a>
+                                </h3>
+                                <div class="inline-btns">
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/1081/coca-cola-reports-first-quarter-2023-results" class="btn">View Press Release</a>
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases" class="btn">View All News</a>
+                                </div>
+                            </div>
+                        </div><!--end news-block-->
+                                            <div class="news-block">
+                            <div class="text" data-mh="news-text-box">
+                                <time class="date" datetime="2023-03-23T11:00:00">Mar 23, 2023 • 11:00 AM EDT</time>
+                                <h3>
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/1080/the-coca-cola-company-announces-timing-of-first-quarter" data-mh="news-block">
+                                        The Coca-Cola Company Announces Timing of First Quarter 2023 Earnings Release                                    </a>
+                                </h3>
+                                <div class="inline-btns">
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/1080/the-coca-cola-company-announces-timing-of-first-quarter" class="btn">View Press Release</a>
+                                    <a href="https://investors.coca-colacompany.com/news-events/press-releases" class="btn">View All News</a>
+                                </div>
+                            </div>
+                        </div><!--end news-block-->
+                                    </div><!--end news-slider-->
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</div><!--end module-->
+<div id="financial-results" class="module module-financial-results  no-bg" >
+    <div class="container">
+        <div class="module-content default-content">
+            <div class="flex-row flex-row-space-between">
+                <h3>Latest Quarterly Results</h3>
+                <a href="/financial-information/financial-results" class="block-link">View Previous Results</a>
+            </div>
+        </div>
+        <div class="row results">
+            <div class="col-md-12">
+                                <div class="text">
+  <div class=" row">
+          <div class="col-sm-4 results-info">
+        <h3>Q1 2023</h3>
+                <div class="date">Quarter Ended Mar 31, 2023</div>
+        
+                
+      </div>
+    
+    <div class="col-sm-8">     
+    
+            <div class="result-line">
+            <!-- Use Earnings Release PDF -->
+            <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/734/7987/earnings_release/2023+Q1+Earnings+Release+%28Ex-99.1%29_Full+Release.pdf">
+                Earnings Release            </a>
+            <div class="pull-right">
+                <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/734/7987/earnings_release/2023+Q1+Earnings+Release+%28Ex-99.1%29_Full+Release.pdf"
+                   class="link"
+                   title="PDF: Coca-Cola Reports First Quarter 2023 Results"
+                   target="_blank">
+                   <span class="eqicon-PDF"></span> PDF
+                </a>
+            </div>
+            <!-- END Use Earnings Release PDF -->
+        </div>
+    
+    <div class="result-line">
+    <div class="pull-right">
+        <a href="https://events.q4inc.com/attendee/623162925" class="result-link link" target="_blank">
+          <span class="eqicon-MP3"></span> Audio
+        </a>
+    </div>
+    
+    <a href="https://events.q4inc.com/attendee/623162925" target="_blank">Earnings Webcast</a>
+</div>
+
+<div class="result-line">
+  <a href="/filings-reports/all-sec-filings/content/0000021344-23-000024/ko-20230331.htm" title="10-Q Filing Viewer" class="fancybox fancybox.iframe">10-Q <span class="sr-only">Filing</span></a>
+    <div class="pull-right">
+        <a href="/filings-reports/all-sec-filings/content/0000021344-23-000024/0000021344-23-000024.pdf" title="10-Q" class="link" target="_blank"><span class="eqicon-PDF"></span> PDF</a>
+        <a href="/filings-reports/all-sec-filings/content/0000021344-23-000024/ko-20230331.htm" title="10-Q Filing Viewer" class="link fancybox fancybox.iframe"><span class="eqicon-HTML"></span> HTML</a>
+    </div>
+</div><!-- XBRL -->
+<div class="result-line">
+    <a href="/filings-reports/all-sec-filings/xbrl_doc_only/3496" title="XBRL Viewer" target="_blank" class="fancybox fancybox.iframe">XBRL</a>
+    <div class="pull-right">
+        <a href="/filings-reports/all-sec-filings/content/0000021344-23-000024/0000021344-23-000024-xbrl.zip" title="Download Raw XBRL Files" class="link" target="_blank"><span class="eqicon-ZIP"></span> ZIP</a>
+        <a href="https://s3.amazonaws.com/content.stockpr.com/sec/0000021344-23-000024/Financial_Report.xlsx" title="XBRL Spreadsheet" class="link" target="_blank"><span class="eqicon-PDF"></span> XLS</a>
+        <a href="/filings-reports/all-sec-filings/xbrl_doc_only/3496" title="XBRL Viewer" class="link fancybox fancybox.iframe" target="_blank"><span class="eqicon-HTML"></span> HTML</a>
+    </div>
+</div>
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/734/7987/margin_analysis_schedule/Q1%2723+Margin+Analysis+Schedule.pdf" target="_blank">Margin Analysis Schedule</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/734/7987/margin_analysis_schedule/Q1%2723+Margin+Analysis+Schedule.pdf" target="_blank" title="Margin Analysis Schedule" class="link">
+          <span class="eqicon-PDF"></span> PDF        </a>
+    </div>
+</div>
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/764/7997/file/CORRECTED+TRANSCRIPT_+The+Coca-Cola+Co.%28KO-US%29%2C+Q1+2023+Earnings+Call%2C+24-April-2023+8_30+AM+ET.pdf" target="_blank">Transcript</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/764/7997/file/CORRECTED+TRANSCRIPT_+The+Coca-Cola+Co.%28KO-US%29%2C+Q1+2023+Earnings+Call%2C+24-April-2023+8_30+AM+ET.pdf" target="_blank" title="Transcript" class="link">
+          <span class="eqicon-PDF"></span> PDF        </a>
+    </div>
+</div>
+<div class="result-line">
+    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/764/7998/file/KO-US_04242023_2811262.mp3" target="_blank">Audio</a>
+    <div class="pull-right">
+        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/764/7998/file/KO-US_04242023_2811262.mp3" target="_blank" title="Audio" class="link">
+          <span class="eqicon-MP3"></span> MP3        </a>
+    </div>
+</div>    </div>
+  </div>
+</div>             </div>
+                    </div><!--end row-->
+                <div class="row">
+            <div class="col-sm-3">
+                <h4>Quarter Highlights</h4>
+            </div>
+            <div class="col-sm-9 text">
+                <ul>
+                    		        <li>Global Unit Case Volume Grew 3% </li>
+                    		        <li>Net Revenues Grew 5%; Organic Revenues (Non-GAAP) Grew 12% </li>
+                    		        <li>Operating Income Declined 1%; Comparable Currency Neutral Operating Income (Non-GAAP) Grew 15%</li>
+                    		        <li>Operating Margin Was 30.7% Versus 32.5% in the Prior Year; Comparable Operating Margin (Non-GAAP) Was 31.8% Versus 31.4% in the Prior Year </li>
+                    		        <li>EPS Grew 12% to $0.72; Comparable EPS (Non-GAAP) Grew 5% to $0.68</li>
+                                </ul>
+                <div class="financial-disclaimer">
+        			<p>For complete information regarding our financials, see our <a href="/filings-reports/all-sec-filings">periodic filings</a>.</p>
+        		</div>
+            </div>
+        </div>
+ 
+		    </div><!--end container-->
+</div><!--end module-->
+
+
+<div class="module module-presentation-event  no-padding-top" >
+    <div class="container">
+                <div class="flex-row flex-2 neutral-bg">
+                        <div class="flex-item presentation" data-mh="presentation-event-flex-item">
+                <div class="text">
+                    <div class="header" data-mh="presentation-event-header">
+                        <div class="pres-event-icon"></div>
+                        <h3>Investor Overview</h3>
+                    </div><!--end header-->
+                    <div class="row pdf-row">
+                        <div class="col-md-4" data-mh="pres-event-item">
+                            <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/706/8001/pdf/IR+Overview+Updated+for+1Q23+%28May+2%29.pdf" target="_blank">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/706/8001/pdf_overview_thumb.jpg" alt="Investor Overview – Updated for First Quarter 2023">
+                            </a>
+                        </div>
+                        <div class="col-md-8" data-mh="pres-event-item">
+                            <div class="vertical-element">
+                            <h4>
+                                <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/706/8001/pdf/IR+Overview+Updated+for+1Q23+%28May+2%29.pdf" target="_blank">
+                                    Investor Overview – Updated for First Quarter 2023                                </a>
+                            </h4>
+                            </div>
+                        </div>
+                    </div>       
+                    <div class="inline-block-links">
+                        <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/706/8001/pdf/IR+Overview+Updated+for+1Q23+%28May+2%29.pdf" target="_blank" class="block-link">View Presentation</a>
+                    </div><!--end inline-block-links-->
+                </div><!--end text-->
+            </div><!--end flex-item-->
+                                      
+            <div class="flex-item event" data-mh="presentation-event-flex-item">
+                <div class="text">
+                    <div class="header" data-mh="presentation-event-header">
+                        <div class="pres-event-icon"></div>
+                        <h3>Recent Event</h3>
+                        <time datetime="2023-04-25T08:30:00" class="date">Apr 25, 2023 • 8:30 am EDT</time>
+                    </div><!--end header-->
+                    <h4>
+                                                <a href="/shareowners/annual-meeting-of-shareowners" target="_blank">
+                                                    2023 Annual Meeting of Shareowners                                                
+                        </a>
+                                            </h4>
+                    <div class="inline-block-links">
+                                                                        <a href="/news-events/events" class="block-link">View All</a>
+                    </div><!--end inline-block-links-->
+                </div><!--end text-->
+            </div><!--end flex-item-->
+                                </div><!--end flex-row-->
+    </div>
+</div><div class="module-report-annual-meeting overlay overlay--dark dark " style="background: url(https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/761/6171/background_image.jpg);background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;background-color: #333;">
+    <div class="container">
+        <div class="flex-row flex-2">
+                        <div class="flex-item">
+                <div class="text">
+                    <h3>Latest Annual Meeting</h3>
+                    <p>
+                                                    <a href="/shareowners/annual-meeting-of-shareowners">
+                                                    2023 Annual Meeting of Shareowners                                                    </a>
+                                            </p>
+                    <div class="inline-btns">
+                                                    <a href="/shareowners/annual-meeting-of-shareowners" class="btn">View Event</a>&nbsp;&nbsp;
+                                            </div>
+                </div><!--end text-->
+            </div><!--end flex-item-->
+                                    <div class="flex-item">
+                <div class="text" data-mh="report-text">
+                    <h3>Latest Annual Report</h3>
+                    <p>For Fiscal Year Ending Dec 31, 2021</p>
+                    <div class="inline-btns">
+                                                    <a href="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/734/7807/annual_report/2021_Business_ESG_Report.pdf" class="btn" target="_blank">View Report</a>
+                                                                            <a href="/filings-reports/all-sec-filings/content/0000021344-23-000011/0000021344-23-000011.pdf" class="btn" target="_blank">View 10-K</a>
+                                            </div>
+                </div><!--end text-->
+            </div><!--end flex-item-->
+                    </div><!--end flex-row-->
+    </div><!--end container-->
+    <div class="subscribe subscribe-module dark">
+    <div class="container">
+        <div class="text">
+                    <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/icon-email-alert.svg" alt="mail icon" />
+                    <h3>Sign Up For Email Alerts</h3>
+                    </div>
+        <a href="/news-events/email-alerts" class="block-link">Sign up today</a>
+    </div>
+</div>
+</div><div class="module module-stock-info-right-data">
+    <div class="ir-quote-box">
+        <div class="stock-info stock-info-right-data no-padding-top">
+            <div class="container">
+                
+<div class="stock-info quote-box qtool" data-qmod-tool="detailedquotetab" data-qmod-params="{&quot;lang&quot;:&quot;en&quot;,&quot;showLogo&quot;:false,&quot;lowHigh&quot;:false,&quot;symbol&quot;:&quot;KO&quot;}">
+    <span class="loader"></span>
+    <script type="text/template">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="stock-header">
+                <h3>Stock Snapshot</h3>
+                <p class="date">{data.pricedata.lasttradedatetime | momentjs 'true' 'LLL' tLang} {data.tz | asTimezone tLang}</time></p>
+                                    <a href="/stock-information" class="block-link">View Detailed Stock Information</a>
+                            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="sub-header">
+            <span class="symbol">NYSE: KO</span>
+            <h4>The Coca-Cola Company</h4>
+            </div>
+        </div>
+        <div class="col-sm-6 stock-info-column">
+            
+            <div class="stock-section price">
+                <span class="value-title">{tplLang.price| toLang tLang}</span>
+                <span class="value">${data.pricedata.last | asQHLast tLang }</span>
+            </div>
+            <div class="stock-section change">
+                <span class="value-title">{tplLang.change| toLang tLang}</span>
+			    <span class="value">
+			        <span rv-qmodchange="data.pricedata.change" class="qmod-change">
+			        <span class="number">{data.pricedata.change | asQHLast tLang }</span>
+			        <span class="percent"> ({data.pricedata.changepercent | numeraljs '0.00' '0.00' | postFix '%'})</span>
+			        </span>
+			    </span>
+            </div>
+            <div class="stock-section volume">
+                <span class="value-title">{tplLang.volume| toLang tLang}</span>
+                <span class="value">{data.pricedata.sharevolume | numeraljs '0.00a'}</span>
+            </div>
+        </div>
+    </div>
+</script></div><!--end stock-info-->                <div class="qm-range-row">
+                
+<div class="stock-info quote-box quote-box-range-row qtool" data-qmod-tool="dayyearrange" data-qmod-params="{&quot;lang&quot;:&quot;en&quot;,&quot;rangePctWidth&quot;:65,&quot;symbol&quot;:&quot;KO&quot;}">
+    <span class="loader"></span>
+    
+<script type="text/template">
+    <div class="qmod-dayyearrange qmod-ui-tool">
+        <div class="qmod-range">
+            <div class="qmod-range-container">
+                <div class="qmod-range-row qmod-range-day">
+                    <div rv-style-width="scope.data.labelPct" class="qmod-range-segment qmod-range-label">
+                        <div class="qmod-range-element">Day Range</div>
+                    </div>
+                    <div rv-style-width="scope.data.rangePct" class="qmod-range-segment qmod-range-data">
+                        <div rv-style-flex-basis="scope.data.underPct" class="qmod-range-segment qmod-range-under">
+                            <div rv-show="scope.data.dayLow | nq 0" class="qmod-range-element">{scope.data.dayLow | asQHLast tLang}</div>
+                        </div>
+                        <div rv-style-flex-basis="scope.data.midPct" class="qmod-range-segment qmod-range-mid"></div>
+                        <div rv-style-flex-basis="scope.data.overPct" class="qmod-range-segment qmod-range-over">
+                            <div rv-show="scope.data.dayHigh | nq 0" class="qmod-range-element">{scope.data.dayHigh | asQHLast tLang}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="qmod-range-row qmod-range-graphic">
+                    <div rv-style-width="scope.data.labelPct" class="qmod-range-segment qmod-range-label"></div>
+                    <div rv-style-width="scope.data.rangePct" class="qmod-range-segment qmod-range-data">
+                        <div rv-style-width="scope.data.underPct" class="qmod-range-segment qmod-range-under"></div>
+                        <div rv-style-width="scope.data.midPct" class="qmod-range-segment qmod-range-mid"></div>
+                        <div rv-style-width="scope.data.overPct" class="qmod-range-segment qmod-range-over"></div>
+                    </div>
+                </div>
+                <div class="qmod-range-row qmod-range-year">
+                    <div rv-style-width="scope.data.labelPct" class="qmod-range-segment qmod-range-label">
+                        <div class="qmod-range-element">52 Week Range</div>
+                    </div>
+                    <div rv-style-width="scope.data.rangePct" class="qmod-range-segment qmod-range-data">
+                        <div rv-show="scope.data.week52Low | nq 0" class="qmod-range-element">{scope.data.week52Low | asQHLast tLang}</div>
+                        <div rv-show="scope.data.week52High | nq 0" class="qmod-range-element">{scope.data.week52High | asQHLast tLang}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script></div><!--end stock-info-->                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="module module-full-side-image  no-padding-top ir-company-over " >
+    <div class="container-fluid">
+        <div class="row">
+                    <div class="col-lg-4 " data-mh="full-side-image">
+                <div class="vertical-element">
+                    <div class="side-image">
+                        <figure class="module-image"><img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/761/6050/image.jpg" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/761/6050/image.jpg 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/761/6050/retina_image.jpg 2x" alt="About The Coca-Cola Company"></figure>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-8 " data-mh="full-side-image">
+                <div class="text">
+                                                				<h2 class="font-size--h3">About The Coca-Cola Company</h2>
+        			        				<p>The Coca-Cola Company (NYSE: KO) is a total beverage company with products sold in more than 200 countries and territories. Our company’s purpose is to refresh the world and make a difference. We sell multiple billion-dollar brands across several beverage categories worldwide. Our portfolio of sparkling soft drink brands includes Coca-Cola, Sprite and Fanta. Our hydration, sports, coffee and tea brands include Dasani, smartwater, vitaminwater, Topo Chico, BODYARMOR, Powerade, Costa, Georgia, Gold Peak and Ayataka. Our nutrition, juice, dairy and plant-based beverage brands include Minute Maid, Simply, innocent, Del Valle, fairlife and AdeS. We’re constantly transforming our portfolio, from reducing sugar in our drinks to bringing innovative new products to market. We seek to positively impact people’s lives, communities and the planet through water replenishment, packaging recycling, sustainable sourcing practices and carbon emissions reductions across our value chain. Together with our bottling partners, we employ more than 700,000 people, helping bring economic opportunity to local communities worldwide. Learn more at <a href="https://www.coca-colacompany.com/">www.coca-colacompany.com</a> and follow us on <a href="https://twitter.com/CocaColaCo" target="_blank" rel="noopener">Twitter</a>, <a href="https://www.instagram.com/thecocacolaco/?hl=en" target="_blank" rel="noopener">Instagram</a>, <a href="https://www.facebook.com/TheCocaColaCo/" target="_blank" rel="noopener">Facebook</a> and <a href="https://www.linkedin.com/company/the-coca-cola-company" target="_blank" rel="noopener">LinkedIn</a>.</p>        			
+        			        			    <div class="inline-btn">
+            				<a href="/about" class="btn">About the Company</a>
+            				<!--<a href="https://d1io3yog0oux5.cloudfront.net/cocacolacompany/files/documents/Coca-Cola-At-A-Glance-Infographic-2019-4-21-19.pdf" target="_blank" class="btn">Download Infographic</a>-->
+        			    </div>
+        			    			</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="module module-flex-stats  no-padding-top">
+    <div class="container">
+                        <div class="flex-row flex-stats flex-2">
+            		        <div class="flex-item">
+                                            <h3>#1 Value share in NARTD</h3>
+                                            <p>Strong Global Position</p>
+                        		        </div>
+            		        <div class="flex-item">
+                                            <h3>200+ countries and territories with ~225 bottling partners</h3>
+                                            <p>Global Footprint with Local Touch</p>
+                        		        </div>
+            		        <div class="flex-item">
+                                            <h3>$7.3B</h3>
+                                            <p>Paid to Shareowners in 2021 Through Dividends</p>
+                        		        </div>
+            		        <div class="flex-item">
+                                            <h3>60 Years</h3>
+                                            <p>Of Consecutive Annual Dividend Increases (As of February 2022)</p>
+                        		        </div>
+                    </div><!--end flex-row-->
+                <div class="footer center">
+        	    </div>
+    </div>
+</div>
+
+
+<div class="module module-brands-grid no-padding-top " >
+    <div class="container">
+        <div class="module-content default-content ">
+    <div class="row">
+        <div class="col-sm-12">
+                                    	<h3>Diverse Brand Portfolio Globally</h3>                    </div><!--end col-->
+    </div><!--end row-->
+</div><!--end module-content-->
+        <div class="content-box">
+            <div class="text">
+                <div class="flex-row flex-8">
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6375/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6375/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6375/retina_image.png 2x" alt="Coca Cola">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6376/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6376/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6376/retina_image.png 2x" alt="Powerade">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6377/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6377/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6377/retina_image.png 2x" alt="Green">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6378/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6378/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6378/retina_image.png 2x" alt="Aquarius">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6379/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6379/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6379/retina_image.png 2x" alt="ilohas">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6380/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6380/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6380/retina_image.png 2x" alt="Innocent">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6381/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6381/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6381/retina_image.png 2x" alt="Fuze">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6382/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6382/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6382/retina_image.png 2x" alt="Smart Water">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6383/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6383/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6383/retina_image.png 2x" alt="Costa">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6384/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6384/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6384/retina_image.png 2x" alt="Dasani">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6385/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6385/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6385/retina_image.png 2x" alt="Georgia">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6386/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6386/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6386/retina_image.png 2x" alt="Santa Clara">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6387/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6387/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6387/retina_image.png 2x" alt="Minute Maid">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6388/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6388/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6388/retina_image.png 2x" alt="Diet Coke">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6389/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6389/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6389/retina_image.png 2x" alt="Zero Sugar">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6390/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6390/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6390/retina_image.png 2x" alt="Del Valle">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6391/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6391/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6391/retina_image.png 2x" alt="Simply">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6392/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6392/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6392/retina_image.png 2x" alt="Sprite">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6393/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6393/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6393/retina_image.png 2x" alt="Gold Peak Tea">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6394/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6394/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6394/retina_image.png 2x" alt="Ades">
+                            </div>
+                        </div><!--end flex-item-->
+                                            <div class="flex-item">
+                            <div class="image-wrapper">
+                                <img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6396/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6396/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/784/6396/retina_image.png 2x" alt="Schweppes">
+                            </div>
+                        </div><!--end flex-item-->
+                                    </div><!--end news-slider-->
+            </div>
+        </div>
+    </div><!--end container-->
+</div><!--end module-->
+
+<div class="module module-teaser-bars  overlay dark" style="background: url(https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/761/6344/background_image.jpg);background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;background-color: #333;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="module-content default-content ">
+    <div class="row">
+        <div class="col-sm-12">
+                                    	<h3>Strategy</h3>
+<h2>Executing for Growth</h2>                        	<a href="/strategy" class="btn">View Strategy</a>
+                    </div><!--end col-->
+    </div><!--end row-->
+</div><!--end module-content-->
+            </div>
+            <div class="col-md-6">
+                                <div class="flex-row flex-1">
+                                        <a href="/strategy/vision" target="_self" class="flex-item">
+                        <div class="text">
+                            <h5>Vision</h5>                            <h4>Total Beverage Company</h4>
+                                                    </div><!--end text-->
+                        <div class="arrow">
+                            <div class="vertical-element">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                        </div>
+                    </a><!--end flex-item-->
+                                        <a href="/strategy/growth-strategy" target="_self" class="flex-item">
+                        <div class="text">
+                            <h5>Strategy</h5>                            <h4>Pursuing Enhanced Topline Growth</h4>
+                                                    </div><!--end text-->
+                        <div class="arrow">
+                            <div class="vertical-element">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                        </div>
+                    </a><!--end flex-item-->
+                                        <a href="/strategy/sustainability" target="_self" class="flex-item">
+                        <div class="text">
+                            <h5>Sustainability</h5>                            <h4>Doing Business the Right Way and Making A Difference Through ESG</h4>
+                                                    </div><!--end text-->
+                        <div class="arrow">
+                            <div class="vertical-element">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                        </div>
+                    </a><!--end flex-item-->
+                                        <a href="/strategy/financials" target="_self" class="flex-item">
+                        <div class="text">
+                            <h5>Financials</h5>                            <h4>Investing with Purpose and Agility to Create Value</h4>
+                                                    </div><!--end text-->
+                        <div class="arrow">
+                            <div class="vertical-element">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                        </div>
+                    </a><!--end flex-item-->
+                                    </div><!--end flex-row-->
+                            </div>
+        </div>
+    </div><!--end container-->
+</div><!--end module-->
+<div class="module-side-image-overlap neutral-bg " >
+    <div class="container-fluid">
+        <div class="row">
+            			<div class="col-lg-5" data-mh="default">
+				<figure class="module-image"><img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/761/6275/image.png" srcset="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/761/6275/image.png 1x, https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/db/761/6275/retina_image.png 2x" alt=""></figure>
+			</div>
+                        <div class="col-lg-6 col-lg-offset-1 " data-mh="default">
+                <div class="vertical-element">
+                <div class="text">
+                        	                    				<h3>Our People Are Our Success</h3>
+<h2>Over 700,000 System Associates Worldwide</h2>
+<div class="inline-btns"><a href="/about/coca-cola-leaders" class="btn">Coca-Cola Leaders</a> <a href="https://www.coca-colacompany.com/company/leadership" class="btn">Board of Directors</a></div>        			    			</div>
+    			</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="module module-flex-teasers  " >
+    <div class="container">
+        <div class="module-content default-content ">
+    <div class="row">
+        <div class="col-sm-12">
+                                    	<h3>Shareowners</h3>
+<h2>Additional Information</h2>                    </div><!--end col-->
+    </div><!--end row-->
+</div><!--end module-content-->
+                <div class="flex-row flex-3">
+                        <div class="flex-item">
+                <div class="text"  data-mh="flex-teaser-item">
+                                    <h4>Frequently Asked Questions</h4>
+                    <p>Questions about owning stock in The Coca-Cola Company, Direct Stock Purchase and Dividend Reinvestment Plan, and more.</p>                                    <div class="inline-block-links">
+                            
+                        <a href="/shareowners/faqs" target="_self" class="block-link">View FAQs</a>
+                                                            </div><!--end inline-block-links-->
+                                </div><!--end text-->
+            </div><!--end flex-item-->
+                        <div class="flex-item">
+                <div class="text"  data-mh="flex-teaser-item">
+                                    <h4>Contact Information</h4>
+                    <p>Information on how to contact Investor Relations, Transfer Agent, Board of Directors and Corporate Headquarters.&nbsp;</p>                                    <div class="inline-block-links">
+                            
+                        <a href="/about/contacts" target="_self" class="block-link">View Contact Information</a>
+                                                            </div><!--end inline-block-links-->
+                                </div><!--end text-->
+            </div><!--end flex-item-->
+                        <div class="flex-item">
+                <div class="text"  data-mh="flex-teaser-item">
+                                    <h4>Proxy Materials &amp; Statements</h4>
+                    <p>Current and past years proxy statements in easy-to-access PDF file formats.</p>
+<div class="inline-block-links"><a href="https://www.coca-colacompany.com/company/shareowners/annual-meeting-of-shareowners" class="block-link">Proxy Materials</a> <a href="/shareowners" class="block-link">Shareowner Info</a></div>                                </div><!--end text-->
+            </div><!--end flex-item-->
+                    </div><!--end flex-row-->
+            </div><!--end container-->
+</div><!--end module-->
+<div class="module-quick-links">
+    <ul>
+        <li><a href="/news-events/email-alerts" class="email">Email Alerts</a></li>
+        <li><a href="/about/contacts" class="contacts">Contacts</a></li>
+        <li><a href="https://investors.coca-colacompany.com/news-events/press-releases/rss" class="rss" target="_blank">RSS News Feed</a></li>
+    </ul>
+</div>
+<footer class="has-qmod" id="footer">
+    <div class="footer-main">
+    	<div class="container">
+    	    <div class="row footer-row">
+    	        <div class="col-md-4 text-left">
+    	            <a href="/"><img width="370" height="40" src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/footer-logo.svg" alt="The Coca-Cola Company" class="footer-logo"></a>    
+    	        </div>
+    	        <div class="col-md-8 text-right">
+                    <ul class="tcc-footer-links">
+                        <li><a href="https://www.coca-colacompany.com/contact-us">Contact Us</a></li>
+                        <li><a href="https://www.coca-colacompany.com/media-center">Media Center</a></li>
+                        <li><a href="https://www.coca-colacompany.com">Investors</a></li>
+                        <li><a href="https://www.coca-colacompany.com/policies-and-practices">Policies</a></li>
+                        <li><a href="https://www.coca-colacompany.com/company/leadership">Leadership</a></li>
+                        <li><a href="https://www.coca-colacompany.com/company/history">History</a></li>
+                        <li><a href="https://www.coca-colacompany.com/faqs">FAQs</a></li>
+                        <li><a href="https://www.coca-colacompany.com/country-selector">International</a></li>
+                    </ul>
+    	        </div>
+    	    </div>
+    	    <div class="row footer-row">
+    	        <div class="col-md-6">
+    	            <div class="copyright">
+            			&copy; 2023 <a href="/">The Coca-Cola Company</a>. All Rights Reserved.
+            		</div>
+            		<div class="footer-links">
+            			    <a href="https://www.coca-colacompany.com/policies-and-practices/us-privacy-policy" target="_blank">Privacy</a>
+    <a href="https://us.coca-cola.com/privacy-policy#california-collection">California Notice at Collection</a>
+    <a href="https://www.coca-colacompany.com/policies-and-practices/terms-of-use" target="_blank">Terms of Use</a>
+    <a href="https://www.coca-colacompany.com/policies-and-practices/us-privacy-policy" target="_blank">Do Not Sell My Personal Information</a>
+            		</div>  
+    	        </div>
+    	        <div class="col-md-6 text-right">
+    	            <ul class="social-links">
+    	                <li><a href="https://twitter.com/CocaColaCo" target="_blank"><img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/twitter_circle.svg" alt="Visit us on Twitter" /></a></li>
+    	                <li><a href="https://www.facebook.com/TheCocaColaCo" target="_blank"><img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/facebook_circle.svg" alt="Visit us on Facebook" /></a></li>
+    	                <li><a href="https://www.linkedin.com/company/the-coca-cola-company/" target="_blank"><img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/linkedin_circle.svg" alt="Visit us on LinkedIn" /></a></li>
+    	                <li><a href="https://www.instagram.com/TheCocaColaCo/" target="_blank"><img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/instagram_circle.svg" alt="Visit us on Instagram" /></a></li>
+    	                <li><a href="https://www.youtube.com/user/CocaColaCo" target="_blank"><img src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/images/youtube_circle.svg" alt="Visit us on Youtube" /></a></li>
+    	            </ul>
+    	        </div>
+    	    </div>
+    	</div>
+	</div>
+</footer>
+
+
+<div class="qmod-attribution">
+    <div class="container">
+        <div class="q-mod-attribution disclaimer">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 center">
+                     <p>
+                    Market Data copyright &copy; 2023 <a href="http://www.quotemedia.com" target="_blank" rel="nofollow">QuoteMedia</a>. Data delayed 15 minutes unless otherwise indicated (view <a href="http://www.quotemedia.com/legal/tos/#times" target="_blank" rel="nofollow" >delay times</a> for all exchanges). <span class="qmf-rt">RT</span>=Real-Time, <span class="qmf-non-rt">EOD</span>=End of Day, <span class="qmf-non-rt">PD</span>=Previous Day. Market Data powered by <a href="http://www.quotemedia.com" target="_blank" rel="nofollow" >QuoteMedia</a>. <a href="http://www.quotemedia.com/legal/tos/" target="_blank" rel="nofollow" >Terms of Use</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="companyVars" type="application/json">
+{
+    "asset_url": "https:\/\/d1io3yog0oux5.cloudfront.net\/_f720c23c5edde02cbea06880ed283a0a\/cocacolacompany",
+    "website_base_url": "https:\/\/investors.coca-colacompany.com",
+    "ir_base_url": false,
+    "hCaptchaSiteKey": "778a5748-d323-4b73-a06c-9625642de8bc",
+    "isQmod": true}
+</script>
+
+<script src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/js/_js/all.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+
+
+
+<script id="qmod" class="optanon-category-C0003" src="https://qmod.quotemedia.com/js/qmodLoader.js" data-qmod-wmid="93303" data-qmod-env="app" data-qmod-version="v1.30.0"></script><script class="optanon-category-C0003" src="https://d1io3yog0oux5.cloudfront.net/_f720c23c5edde02cbea06880ed283a0a/cocacolacompany/files/theme/js/aside/_js/browser-check.min.js" async></script>
+
+<script>
+    var checkExist = setInterval(function() {
+       if (jq('#optanon-popup-bottom a').length) {
+            /* Add label to empty link */ 
+            document.querySelector("#optanon-popup-bottom a").setAttribute('aria-label', 'onetrust website link');
+            clearInterval(checkExist);
+       }
+    }, 100);
+</script>
+        
+    
+    	
+    </div><!-- //general-wrapper -->
+</body>
+</html>

@@ -170,7 +170,7 @@ for stock in stocks:
 if args.csv:
     stock_prices = pd.DataFrame(prices, columns=["Stock", "Price_Summary", "URL"])
     stock_prices.to_csv(args.csv, index=False)
-if args.resarch:
+if args.research:
     url = args.research
     research(url)
     
