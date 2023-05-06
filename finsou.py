@@ -18,7 +18,15 @@ def yahoo_finance_prices(url, stock):
     https://beautiful-soup-4.readthedocs.io/en/latest/#searching-by-css-class
     """
     # TODO: get after hours price in real time during after hour session
-    page = requests.get(url).text
+    headers = {
+        "Cache-Control": "no-cache",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.1 (KHTML, like Gecko) Chrome/43.0.845.0 Safari/534.1",
+    }
+    r = requests.get(url, headers=headers)
+    print(r.status_code)
+    page = r.text
+    with open(f"{stock}.txt", "w") as f:
+        f.write(page)
     soup = BeautifulSoup(page, "html.parser")
     price_tags = soup.find_all(
         class_=re.compile("Fw\(b\) Fz\(36px\) Mb\(\-4px\) D\(ib\)")
@@ -26,9 +34,11 @@ def yahoo_finance_prices(url, stock):
     mkt_close_price = price_tags[0].string
     mkt_close_price = mkt_close_price.replace(",", "")
     price_change_tags = soup.find_all(class_=re.compile("Fw\(500\)"))
-    price_change_tags = [span.string for span in price_change_tags]
-    daily_price_change = price_change_tags[2].replace("(", "").replace(")", "").strip()
-    daily_pct_change = price_change_tags[3].replace("(", "").replace(")", "").strip()
+    price_change_tags = [span for span in price_change_tags if span.string is not None]
+    price_change_tags = [span.string for span in price_change_tags if "+" in span.string or "-" in span.string]
+    #price_change_tags = [value for value in price_change_tags if "+" in value or "-" in value]
+    daily_price_change = price_change_tags[0].replace("(", "").replace(")", "").strip()
+    daily_pct_change = price_change_tags[1].replace("(", "").replace(")", "").strip()
     # Display message if stonk had a big daily move.
     percent = (
         daily_pct_change.replace("-", "")
@@ -109,14 +119,15 @@ prices = list()
 for stock in stocks:
     print(f"\n{stock}\n")
     url = f"https://finance.yahoo.com/quote/{stock}/"
-    try:
-        summary = yahoo_finance_prices(url, stock)
-    except IndexError:
-        print(f"Error getting summary for {stock}")
-        summary = "N/A"
-    except AttributeError:
-        print(f"Failed to get stock price for {stock}")
-        continue
+    summary = yahoo_finance_prices(url, stock)
+    #try:
+    #    summary = yahoo_finance_prices(url, stock)
+    #except IndexError:
+    #    print(f"Error getting summary for {stock}")
+    #    summary = "N/A"
+    #except AttributeError:
+    #    print(f"Failed to get stock price for {stock}")
+    #    continue
     prices.append([stock, summary, url])
     print(url)
     # Added time delay between each request to avoid too many hits too fast.
