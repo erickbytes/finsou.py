@@ -1,13 +1,12 @@
 # finsou.py
 
-finsou.py uses Python's html.parser + Beautiful Soup + regex to parse Yahoo price info.
+finsou.py uses Python's html.parser + Beautiful Soup + regex to parse Yahoo price info. With it, you can:
 
-- parse market close and after hours stock prices from Yahoo Finance HTML
-- print market open, daily price action, market close and adter hours summary for each stock
-- export prices to csv
+- print market open, daily price action, market close and after hours summary for each stock
+- export price summaries queried to csv
 - download earnings reports and media
 
-Example Stock Summary
+**Example Stock Summary**
 ```
 >>> python finsou.py -s "TSLA"
 
@@ -43,10 +42,10 @@ python finsou.py --stocks "TSLA,MSFT,AAPL" --csv "Prices Summary.csv"
 # Read a list of stocks from a text file with one ticker on each line.
 python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
 
-# Crawl an investor relations website for documents.
-python finsou.py --research https://investors.coca-colacompany.com/
+# Get Coca-Cola prices and crawl investor relations website for documents.
+python finsou.py -s KO --research https://investors.coca-colacompany.com/
 ```
-Example portfolio.txt contents:
+**Example portfolio.txt contents:**
 ```
 TSLA
 MSFT

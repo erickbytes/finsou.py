@@ -12,7 +12,7 @@ def yahoo_finance_prices(url, stock):
     """Parse Yahoo Finance HTML price and after hours price info.
     Use Beautiful Soup + regex compile to select span tags with price values.
 
-    The re.compile function accepts a str, css class value to match if contained in any tag.
+    The re.compile function accepts a str, css class str to match if contained in any tag.
     4 regex matches are used to get HTML tags with ( ) $ - escaped with \ in each.
     returns summary, str containing regular hours stock market + after hours prices
 
@@ -25,9 +25,7 @@ def yahoo_finance_prices(url, stock):
         "Cache-Control": "no-cache",
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.1 (KHTML, like Gecko) Chrome/43.0.845.0 Safari/534.1",
     }
-    r = requests.get(url, headers=headers)
-    print(r.status_code)
-    page = r.text
+    page = requests.get(url, headers=headers).text
     soup = BeautifulSoup(page, "html.parser")
     price_tags = soup.find_all(
         class_=re.compile("Fw\(b\) Fz\(36px\) Mb\(\-4px\) D\(ib\)")
@@ -172,3 +170,7 @@ for stock in stocks:
 if args.csv:
     stock_prices = pd.DataFrame(prices, columns=["Stock", "Price_Summary", "URL"])
     stock_prices.to_csv(args.csv, index=False)
+if args.resarch:
+    url = args.research
+    research(url)
+    
