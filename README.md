@@ -1,6 +1,6 @@
 # finsou.py
 
-finsou.py uses Python's html.parser + Beautiful Soup + regex to parse Yahoo price info. With it, you can:
+The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Yahoo stock price info. With it, you can:
 
 - print market open, daily price action, market close and after hours summary for each stock
 - export price summaries queried to csv
