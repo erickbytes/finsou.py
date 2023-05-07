@@ -33,7 +33,7 @@ pip install requests
 
 | Arg  | Alt. Arg  | Description										                         |
 |-----:|-----------|-----------------------------------------------------------------------------|
-|   -s | --stocks  | accepts stock ticker, comma delited string of stocks or portfolio.txt	     |
+|   -s | --stocks  | accepts stock ticker, comma delimited string of stocks or portfolio.txt     |
 |   -c | --csv     | write csv summary to given file, ex: "csv_name.csv"                         |
 |   -r | --research| accepts investor resources url, downloads PDF, docx, csv, xlsx + mp3        |
 |   -h | --help    | show help message and exit  						                         |
