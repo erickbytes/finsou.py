@@ -22,6 +22,13 @@ After Hours % Change: -0.04%
 After Hours $ Change: -0.07
 https://finance.yahoo.com/quote/TSLA/
 ```
+**Install Python Library Dependencies**
+```
+pip install beautifulsoup4
+pip install pandas
+pip install requests
+```
+
 **CLI Options**
 
 | Arg  | Alt. Arg  | Description										                         |
@@ -42,7 +49,7 @@ python finsou.py --stocks "TSLA,MSFT,AAPL" --csv "Prices Summary.csv"
 # Read a list of stocks from a text file with one ticker on each line.
 python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
 
-# Get Coca-Cola prices and crawl investor relations website for documents.
+# Get Coca-Cola prices and crawl investor relations website for media.
 python finsou.py -s KO --research https://investors.coca-colacompany.com/
 ```
 **Example portfolio.txt contents:**
