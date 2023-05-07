@@ -111,7 +111,14 @@ def research(url):
     """
     page = requests.get(url).text
     soup = BeautifulSoup(page, "html.parser")
-    urls = [node.get("href") for node in soup.find_all(href=True)]
+    urls = list(set([node.get("href") for node in soup.find_all(href=True)]))
+    # Normalize trailing backslash in urls.
+    urls = [
+        f"{url}/" for url in urls if url.endswith("/") is not True
+    ]
+    print("\nINVESTOR LINKS\n--------------")
+    for url in sorted(urls):
+        print(url)
     pdfs = [url for url in urls if url.endswith(".pdf")]
     csvs = [url for url in urls if url.endswith(".csv")]
     mp4s = [url for url in urls if url.endswith(".mp4")]
@@ -173,4 +180,3 @@ if args.csv:
 if args.research:
     url = args.research
     research(url)
-    
