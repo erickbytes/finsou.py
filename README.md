@@ -8,19 +8,19 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 
 **Example Stock Summary**
 ```
-python finsou.py -s "TSLA"
+python finsou.py -s "PATH"
 
-TSLA
+PATH
 
 MONSTER BREAKOUT!
-Market Price $ Open: 161.2
-Regular Market $ Close: 170.06
-Daily % Change: +5.50%
-Daily $ Change: +8.86
-Post Market $ Close: 169.99
-After Hours % Change: -0.04%
-After Hours $ Change: -0.07
-https://finance.yahoo.com/quote/TSLA/
+Market Price $ Open: 12.87
+Regular Market $ Close: 13.41
+Daily % Change: +4.20%
+Daily $ Change: +0.54
+Post Market $ Close: 13.42
+After Hours % Change: +0.07%
+After Hours $ Change: +0.01
+https://finance.yahoo.com/quote/PATH/
 ```
 **CLI Options**
 
@@ -47,7 +47,7 @@ python finsou.py -s KO --research https://investors.coca-colacompany.com/
 ```
 **Example portfolio.txt contents:**
 ```
-MSFT
-FUBO
-CROX
+META
+PINS
+SNAP
 ```
