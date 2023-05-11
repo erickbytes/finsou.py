@@ -20,7 +20,6 @@ def yahoo_finance_prices(url, stock):
     https://beautiful-soup-4.readthedocs.io/en/latest/#searching-by-css-class
     https://docs.python.org/3/library/re.html#re.compile
     """
-    # TODO: get after hours price in real time during after hour session
     headers = {
         "Cache-Control": "no-cache",
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.1 (KHTML, like Gecko) Chrome/43.0.845.0 Safari/534.1",
@@ -36,7 +35,7 @@ def yahoo_finance_prices(url, stock):
     price_change_tags = [
         span.string
         for span in price_change_tags
-        if "+" in span.string or "-" in span.string
+        if "+" in span.string or "-" in span.string or "0.0" in span.string
     ]
     daily_price_change = price_change_tags[0].replace("(", "").replace(")", "").strip()
     daily_pct_change = price_change_tags[1].replace("(", "").replace(")", "").strip()
