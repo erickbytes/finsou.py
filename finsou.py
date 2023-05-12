@@ -110,13 +110,11 @@ def research(url):
     """
     page = requests.get(url).text
     soup = BeautifulSoup(page, "html.parser")
-    urls = [node.get("href") for node in soup.find_all(href=True)]
+    urls = list(set([node.get("href") for node in soup.find_all(href=True)]))
     # Normalize trailing backslash in urls.
-    urls = [
-        f"{url}/" for url in urls if url.endswith("/") is not True
-    ]
+    urls = [url[0:-1] for url in urls if url.endswith("/") is True]
     print("\nINVESTOR LINKS\n--------------")
-    for url in sorted(list(set(urls))):
+    for url in sorted(set(urls)):
         print(url)
     pdfs = [url for url in urls if url.endswith(".pdf")]
     csvs = [url for url in urls if url.endswith(".csv")]
@@ -150,13 +148,16 @@ parser.add_argument("-s", "--stocks", help="comma sep. stocks or portfolio.txt")
 parser.add_argument("-c", "--csv", help='set csv export with "your_csv.csv"')
 parser.add_argument("-r", "--research", help="accepts investor relations website url")
 args = parser.parse_args()
-if ".txt" in args.stocks:
-    with open(args.stocks, "r") as f:
-        stocks = f.readlines()
-    stocks = [line.strip() for line in stocks if line.isspace() is not True]
-    print("Loaded stocks from portfolio.txt.")
-else:
-    stocks = args.stocks.split(",")
+try:
+    if ".txt" in args.stocks:
+        with open(args.stocks, "r") as f:
+            stocks = f.readlines()
+        stocks = [line.strip() for line in stocks if line.isspace() is not True]
+        print("Loaded stocks from portfolio.txt.")
+    else:
+        stocks = args.stocks.split(",")
+except TypeError:
+    stocks = []
 prices = list()
 for stock in stocks:
     print(f"\n{stock}\n")
