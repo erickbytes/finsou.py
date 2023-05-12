@@ -43,7 +43,7 @@ def yahoo_finance_prices(url, stock):
         daily_pct_change.replace("-", "").replace("+", "").replace("%", "").strip()
     )
     info = list()
-    # Display message if stpck had a big daily move.
+    # Display message if stock had a big daily move.
     if "+" in daily_pct_change and float(percent) > 4:
         info.append("MONSTER BREAKOUT!")
     elif "+" in daily_pct_change and float(percent) >= 1 and float(percent) <= 4:
@@ -110,13 +110,13 @@ def research(url):
     """
     page = requests.get(url).text
     soup = BeautifulSoup(page, "html.parser")
-    urls = list(set([node.get("href") for node in soup.find_all(href=True)]))
+    urls = [node.get("href") for node in soup.find_all(href=True)]
     # Normalize trailing backslash in urls.
     urls = [
         f"{url}/" for url in urls if url.endswith("/") is not True
     ]
     print("\nINVESTOR LINKS\n--------------")
-    for url in sorted(urls):
+    for url in sorted(list(set(urls))):
         print(url)
     pdfs = [url for url in urls if url.endswith(".pdf")]
     csvs = [url for url in urls if url.endswith(".csv")]
