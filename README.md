@@ -1,12 +1,12 @@
 # finsou.py
 
-Try it after hours. This tool only currently works after the market has closed normal market hours.
-
 The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Yahoo stock price info. With it, you can:
 
 - print market open, daily price action, market close and after hours summary for each stock
 - export price summaries queried to csv
 - download earnings reports and media with urllib
+
+After hours only. This tool only currently works after the market has closed normal market hours.
 
 **Example Stock Summary**
 ```
