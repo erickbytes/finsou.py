@@ -21,9 +21,10 @@ def yahoo_finance_prices(url, stock):
     https://beautiful-soup-4.readthedocs.io/en/latest/#searching-by-css-class
     https://docs.python.org/3/library/re.html#re.compile
     """
+    user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.1 (KHTML, like Gecko) Chrome/43.0.845.0 Safari/534.1"
     headers = {
         "Cache-Control": "no-cache",
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.1 (KHTML, like Gecko) Chrome/43.0.845.0 Safari/534.1",
+        "User-Agent": user_agent,
     }
     page = requests.get(url, headers=headers).text
     soup = BeautifulSoup(page, "html.parser")
@@ -191,10 +192,7 @@ if args.csv:
     moving_down = stock_prices[
         stock_prices["AH_%_Change"].str.contains("-", regex=False)
     ]
-    stock_prices = pd.concat([moving_up, flat, moving_down])
-    #stock_prices.Percent_Change = stock_prices.Percent_Change.apply(
-    #    lambda num: f"{num:.00%}"
-    #)
+    stock_prices = pd.concat([moving_up, flat, moving_down]).drop("Percent_Change", axis=1)
     stock_prices.to_csv(args.csv, index=False)
 if args.research:
     url = args.research
