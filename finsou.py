@@ -6,6 +6,7 @@ import urllib
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+from decimal import Decimal
 
 
 def yahoo_finance_prices(url, stock):
@@ -94,7 +95,7 @@ def yahoo_finance_prices(url, stock):
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
     summary = "\n".join(lines)
     print(summary)
-    return summary
+    return summary, ah_pct_change
 
 
 def research(url):
@@ -163,19 +164,37 @@ for stock in stocks:
     print(f"\n{stock}\n")
     url = f"https://finance.yahoo.com/quote/{stock}/"
     try:
-        summary = yahoo_finance_prices(url, stock)
+        summary, ah_pct_change = yahoo_finance_prices(url, stock)
     except IndexError:
         print(f"Error getting summary for {stock}")
         summary = "N/A"
     except AttributeError:
         print(f"Failed to get stock price for {stock}")
         continue
-    prices.append([stock, summary, url])
+    prices.append([stock, summary, url, ah_pct_change])
     print(url)
     # Added time delay between each request to avoid too many hits too fast.
     time.sleep(2)
 if args.csv:
-    stock_prices = pd.DataFrame(prices, columns=["Stock", "Price_Summary", "URL"])
+    cols = ["Stock", "Price_Summary", "URL", "AH_%_Change"]
+    stock_prices = pd.DataFrame(prices, columns=cols)
+    stock_prices["Percent_Change"] = (
+        stock_prices["AH_%_Change"]
+        .str.replace("-", "")
+        .str.replace("%", "")
+        .str.replace("+", "")
+        .apply(lambda num:Decimal(num))
+    )
+    stock_prices = stock_prices.sort_values(by="AH_%_Change")
+    moving_up = stock_prices[stock_prices["AH_%_Change"].str.contains("+", regex=False)]
+    flat = stock_prices[stock_prices["AH_%_Change"].str.contains("0.00", regex=False)]
+    moving_down = stock_prices[
+        stock_prices["AH_%_Change"].str.contains("-", regex=False)
+    ]
+    stock_prices = pd.concat([moving_up, flat, moving_down])
+    #stock_prices.Percent_Change = stock_prices.Percent_Change.apply(
+    #    lambda num: f"{num:.00%}"
+    #)
     stock_prices.to_csv(args.csv, index=False)
 if args.research:
     url = args.research
