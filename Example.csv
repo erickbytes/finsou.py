@@ -1,36 +1,57 @@
-Stock,Post_Market_Close,URL
-OKTA,"Market Price $ Open: 70.28
-Regular Market $ Close: 70.15
-Daily % Change: (-0.18%)
-Daily $ Change: -0.13
-Post Market $ Close: 70.11
-After Hours % Change: (-0.06%)
-After Hours $ Change: -0.04",https://finance.yahoo.com/quote/OKTA/
-NVDA,"Market Price $ Open: 282.1
-Regular Market $ Close: 278.02
-Daily % Change: (-1.45%)
-Daily $ Change: -4.08
-Post Market $ Close: 276.79
-After Hours % Change: (-0.44%)
-After Hours $ Change: -1.23",https://finance.yahoo.com/quote/NVDA/
-TSLA,"Market Price $ Open: 160.31
-Regular Market $ Close: 160.61
-Daily % Change: (+0.19%)
-Daily $ Change: +0.30
-Post Market $ Close: 161.79
-After Hours % Change: (+0.73%)
-After Hours $ Change: +1.18",https://finance.yahoo.com/quote/TSLA/
-MSFT,"Market Price $ Open: 305.41
-Regular Market $ Close: 304.40
-Daily % Change: (-0.33%)
-Daily $ Change: -1.01
-Post Market $ Close: 305.00
-After Hours % Change: (+0.20%)
-After Hours $ Change: +0.60",https://finance.yahoo.com/quote/MSFT/
-NKE,"Market Price $ Open: 127.26
-Regular Market $ Close: 126.74
-Daily % Change: (-0.41%)
-Daily $ Change: -0.52
-Post Market $ Close: 125.72
-After Hours % Change: (-0.80%)
-After Hours $ Change: -1.02",https://finance.yahoo.com/quote/NKE/
+Stock,Price_Summary,URL,AH_%_Change
+CROX,"SOLID GREEN DAY!
+Market Price $ Open: 87.62
+Regular Market $ Close: 89.68
+Daily % Change: +2.35%
+Daily $ Change: +2.06
+Post Market $ Close: 90.01
+After Hours % Change: +0.37%
+After Hours $ Change: +0.33",https://finance.yahoo.com/quote/CROX/,+0.37%
+TM,"SOLID GREEN DAY!
+Market Price $ Open: 188.96
+Regular Market $ Close: 195.04
+Daily % Change: +3.22%
+Daily $ Change: +6.08
+Post Market $ Close: 195.50
+After Hours % Change: +0.24%
+After Hours $ Change: +0.46",https://finance.yahoo.com/quote/TM/,+0.24%
+MSFT,"
+Market Price $ Open: 329.06
+Regular Market $ Close: 328.65
+Daily % Change: -0.12%
+Daily $ Change: -0.41
+Post Market $ Close: 328.83
+After Hours % Change: +0.05%
+After Hours $ Change: +0.18",https://finance.yahoo.com/quote/MSFT/,+0.05%
+AAPL,"
+Market Price $ Open: 177.97
+Regular Market $ Close: 179.07
+Daily % Change: +0.62%
+Daily $ Change: +1.10
+Post Market $ Close: 179.12
+After Hours % Change: +0.03%
+After Hours $ Change: +0.04",https://finance.yahoo.com/quote/AAPL/,+0.03%
+NVDA,"
+Market Price $ Open: 439.66
+Regular Market $ Close: 435.20
+Daily % Change: -1.01%
+Daily $ Change: -4.46
+Post Market $ Close: 435.11
+After Hours % Change: -0.02%
+After Hours $ Change: -0.09",https://finance.yahoo.com/quote/NVDA/,-0.02%
+BABA,"
+Market Price $ Open: 87.02
+Regular Market $ Close: 87.11
+Daily % Change: +0.10%
+Daily $ Change: +0.09
+Post Market $ Close: 87.03
+After Hours % Change: -0.09%
+After Hours $ Change: -0.08",https://finance.yahoo.com/quote/BABA/,-0.09%
+TSLA,"
+Market Price $ Open: 265.28
+Regular Market $ Close: 266.50
+Daily % Change: +0.46%
+Daily $ Change: +1.22
+Post Market $ Close: 266.16
+After Hours % Change: -0.13%
+After Hours $ Change: -0.34",https://finance.yahoo.com/quote/TSLA/,-0.13%

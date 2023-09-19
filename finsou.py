@@ -184,15 +184,18 @@ if args.csv:
         .str.replace("-", "")
         .str.replace("%", "")
         .str.replace("+", "")
-        .apply(lambda num:Decimal(num))
+        .apply(lambda num: Decimal(num))
     )
-    stock_prices = stock_prices.sort_values(by="AH_%_Change")
-    moving_up = stock_prices[stock_prices["AH_%_Change"].str.contains("+", regex=False)].sort_values(by="Percent_Change", ascending=False)
+    moving_up = stock_prices[
+        stock_prices["AH_%_Change"].str.contains("+", regex=False)
+    ].sort_values(by="Percent_Change", ascending=False)
     flat = stock_prices[stock_prices["AH_%_Change"].str.contains("0.00", regex=False)]
     moving_down = stock_prices[
         stock_prices["AH_%_Change"].str.contains("-", regex=False)
-    ]
-    stock_prices = pd.concat([moving_up, flat, moving_down]).drop("Percent_Change", axis=1)
+    ].sort_values(by="Percent_Change", ascending=True)
+    stock_prices = pd.concat([moving_up, flat, moving_down]).drop(
+        "Percent_Change", axis=1
+    )
     stock_prices.to_csv(args.csv, index=False)
 if args.research:
     url = args.research
