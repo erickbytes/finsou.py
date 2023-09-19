@@ -187,7 +187,7 @@ if args.csv:
         .apply(lambda num:Decimal(num))
     )
     stock_prices = stock_prices.sort_values(by="AH_%_Change")
-    moving_up = stock_prices[stock_prices["AH_%_Change"].str.contains("+", regex=False)]
+    moving_up = stock_prices[stock_prices["AH_%_Change"].str.contains("+", regex=False)].sort_values(by="Percent_Change", ascending=False)
     flat = stock_prices[stock_prices["AH_%_Change"].str.contains("0.00", regex=False)]
     moving_down = stock_prices[
         stock_prices["AH_%_Change"].str.contains("-", regex=False)
