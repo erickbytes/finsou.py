@@ -10,19 +10,23 @@ After hours only. This tool only currently works after the market has closed nor
 
 **Example Stock Summary**
 ```
-python finsou.py -s "PATH"
+python finsou.py -s MSFT
 
-PATH
+MSFT
 
-MONSTER BREAKOUT!
-Market Price $ Open: 12.87
-Regular Market $ Close: 13.41
-Daily % Change: +4.20%
-Daily $ Change: +0.54
-Post Market $ Close: 13.42
-After Hours % Change: +0.07%
-After Hours $ Change: +0.01
-https://finance.yahoo.com/quote/PATH/
+SOLID GREEN DAY!
+Market Price $ Open: 319.36
+Regular Market $ Close: 327.26
+Daily % Change: +2.47%
+Daily $ Change: +7.90
+----------------------------------
+After Hours % Change: +0.59%
+After Hours $ Change: +1.92
+Post Market $ Close: 329.18
+----------------------------------
+Earnings Date: Oct 23, 2023 - Oct 27, 2023
+Ex-Dividend Date: Nov 15, 2023
+https://finance.yahoo.com/quote/MSFT/
 ```
 **Install Python Library Dependencies**
 ```

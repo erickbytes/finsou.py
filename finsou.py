@@ -9,6 +9,17 @@ import pandas as pd
 from decimal import Decimal
 
 
+def earnings_date_fallback(table_tags):
+    earnings_date_tag = [span for span in table_tags if ", " in str(span)]
+    span = '<td class="Ta(end) Fw(600) Lh(14px)" data-test="EARNINGS_DATE-value"><span>'
+    earnings_date = (
+        str(earnings_date_tag[0])
+        .replace(span, "")
+        .replace("</span> - <span>", " - ")
+        .replace("</span></td>", "")
+    )
+    return earnings_date
+
 def yahoo_finance_prices(url, stock):
     """Parse Yahoo Finance HTML price and after hours price info.
     Use Beautiful Soup + regex compile to select span tags with price values.
@@ -84,15 +95,40 @@ def yahoo_finance_prices(url, stock):
     except UnboundLocalError:
         # Catch flat 0 change stocks. Attempting to round zero error.
         open_price = mkt_close_price
+    # table_tags is a reference to the table of stats below the chart.
+    table_tags = soup.find_all(class_=re.compile("Ta\(end\) Fw\(600\) Lh\(14px\)"))
+    try:
+        earnings_date_tags = [span for span in table_tags if ", " in str(span.string)]
+        # This is a fallback for some stocks because beautiful soup doesn't work for tags with multiple spans.
+        if "EARNING" not in str(earnings_date_tags[0]):
+            earnings_date = earnings_date_fallback(table_tags)
+        else:
+            earnings_date = earnings_date_tags[0].string
+    except TypeError:
+        earnings_date = earnings_date_fallback(table_tags)
+    except IndexError:
+        earnings_date = "N/A"
+    ex_dividend_date_tag = [span for span in table_tags if ", " in str(span.string)]
+    if "DIVIDEND" in str(ex_dividend_date_tag[0]):
+        ex_dividend_date = ex_dividend_date_tag[0].string                        
+    else:
+        try:
+            ex_dividend_date = ex_dividend_date_tag[1].string
+        except:
+            ex_dividend_date = "N/A"
     alerts = "\n".join(info)
     summary = f"""{alerts}
     Market Price $ Open: {open_price}
     Regular Market $ Close: {mkt_close_price}
     Daily % Change: {daily_pct_change}
     Daily $ Change: {daily_price_change}
-    Post Market $ Close: {post_mkt_price}
+    ----------------------------------
     After Hours % Change: {ah_pct_change}
-    After Hours $ Change: {ah_price_change}"""
+    After Hours $ Change: {ah_price_change}
+    Post Market $ Close: {post_mkt_price}
+    ----------------------------------
+    Earnings Date: {earnings_date}
+    Ex-Dividend Date: {ex_dividend_date}"""
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
     summary = "\n".join(lines)
     print(summary)
@@ -164,14 +200,15 @@ prices = list()
 for stock in stocks:
     print(f"\n{stock}\n")
     url = f"https://finance.yahoo.com/quote/{stock}/"
-    try:
-        summary, ah_pct_change = yahoo_finance_prices(url, stock)
-    except IndexError:
-        print(f"Error getting summary for {stock}")
-        summary = "N/A"
-    except AttributeError:
-        print(f"Failed to get stock price for {stock}")
-        continue
+    summary, ah_pct_change = yahoo_finance_prices(url, stock)
+    #try:
+    #    summary, ah_pct_change = yahoo_finance_prices(url, stock)
+    #except IndexError:
+    #    print(f"Error getting summary for {stock}")
+    #    summary = "N/A"
+    #except AttributeError:
+    #    print(f"Failed to get stock price for {stock}")
+    #    continue
     prices.append([stock, summary, url, ah_pct_change])
     print(url)
     # Added time delay between each request to avoid too many hits too fast.
