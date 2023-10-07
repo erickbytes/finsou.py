@@ -7,6 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from decimal import Decimal
+from rich import print as rprint
 
 
 def earnings_date_fallback(table_tags):
@@ -109,7 +110,7 @@ def yahoo_finance_prices(url, stock):
     except IndexError:
         earnings_date = "N/A"
     ex_dividend_date_tag = [span for span in table_tags if ", " in str(span.string)]
-    if "DIVIDEND" in str(ex_dividend_date_tag[0]):
+    if ex_dividend_date_tag and "DIVIDEND" in str(ex_dividend_date_tag[0]):
         ex_dividend_date = ex_dividend_date_tag[0].string                        
     else:
         try:
@@ -131,7 +132,7 @@ def yahoo_finance_prices(url, stock):
     Ex-Dividend Date: {ex_dividend_date}"""
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
     summary = "\n".join(lines)
-    print(summary)
+    rprint(f"[dark_cyan]{summary}[/dark_cyan]", sep="\n")
     return summary, ah_pct_change
 
 
@@ -143,6 +144,9 @@ def research(url):
     The urllib urlretrieve function copies a network object to local file.
     The second argument, if present, specifies the file location to copy to.
     If filename is absent, the location will be a tempfile with a generated name.
+    
+    Note: this will only return files if the website lists them as links, 
+    so it will not work on every stock.
 
     https://docs.python.org/3/library/urllib.request.html#urllib.request.urlretrieve
     """
@@ -151,9 +155,9 @@ def research(url):
     urls = list(set([node.get("href") for node in soup.find_all(href=True)]))
     # Normalize trailing backslash in urls.
     urls = [url[0:-1] for url in urls if url.endswith("/") is True]
-    print("\nINVESTOR LINKS\n--------------")
+    rprint("\n[dark_cyan]INVESTOR LINKS\n--------------[/dark_cyan]")
     for url in sorted(set(urls)):
-        print(url)
+        rprint(f"[deep_sky_blue2]{url}[/deep_sky_blue2]")
     pdfs = [url for url in urls if url.endswith(".pdf")]
     csvs = [url for url in urls if url.endswith(".csv")]
     mp4s = [url for url in urls if url.endswith(".mp4")]
@@ -161,19 +165,19 @@ def research(url):
     xls = [url for url in urls if url.endswith(".xlsx")]
     objects = pdfs + csvs + mp4s + docs + xls
     if len(objects) == 0:
-        print("No media found to download.")
+        rprint("[deep_sky_blue2]No media found to download.[/deep_sky_blue2]")
         return None
     for obj_url in objects:
         try:
             obj = obj_url.split("/")[-1]
             urllib.request.urlretrieve(url, filename=obj)
-            print(f"New network object saved: {obj}")
+            rprint(f"[deep_sky_blue2]New network object saved: {obj}[/deep_sky_blue2]")
         except urllib.error.HTTPError:
             traceback.print_exc()
-            print(f"Forbidden to download file: {obj}")
+            rprint(f"[deep_sky_blue2]Forbidden to download file: {obj}[/deep_sky_blue2]")
         except ValueError:
             traceback.print_exc()
-            print(f"Failed due to invalid url: {obj}")
+            rprint(f"[deep_sky_blue2]Failed due to invalid url: {obj}[/deep_sky_blue2]")
         return None
 
 
@@ -191,26 +195,18 @@ try:
         with open(args.stocks, "r") as f:
             stocks = f.readlines()
         stocks = [line.strip() for line in stocks if line.isspace() is not True]
-        print("Loaded stocks from portfolio.txt.")
+        rprint("[deep_sky_blue2]Loaded stocks from portfolio.txt.[/deep_sky_blue2]")
     else:
         stocks = args.stocks.split(",")
 except TypeError:
     stocks = []
 prices = list()
 for stock in stocks:
-    print(f"\n{stock}\n")
+    rprint(f"\n[deep_sky_blue2]{stock}[/deep_sky_blue2]")
     url = f"https://finance.yahoo.com/quote/{stock}/"
     summary, ah_pct_change = yahoo_finance_prices(url, stock)
-    #try:
-    #    summary, ah_pct_change = yahoo_finance_prices(url, stock)
-    #except IndexError:
-    #    print(f"Error getting summary for {stock}")
-    #    summary = "N/A"
-    #except AttributeError:
-    #    print(f"Failed to get stock price for {stock}")
-    #    continue
     prices.append([stock, summary, url, ah_pct_change])
-    print(url)
+    rprint(f"[deep_sky_blue2]{url}[/deep_sky_blue2]")
     # Added time delay between each request to avoid too many hits too fast.
     time.sleep(2)
 if args.csv:
