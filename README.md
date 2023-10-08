@@ -10,7 +10,7 @@ After hours only. This tool only currently works after the market has closed nor
 
 **Example Stock Summary**
 
-![stock summary example]("finsou.py/finsou.py example.png" "Fetch a Stock Summary")
+![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
 
 **Install Python Library Dependencies**
 ```
