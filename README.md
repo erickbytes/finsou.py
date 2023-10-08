@@ -45,7 +45,7 @@ python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
 
 # Get Coca-Cola prices and crawl investor relations website for media.
 python finsou.py -s KO --research https://investors.coca-colacompany.com/
-# Note: this will only return files if the website lists them as links, so it will not work on every stock.
+# Note: this is experimental and results will vary because documents are often hidden from links.
 ```
 **Example portfolio.txt contents:**
 ```
