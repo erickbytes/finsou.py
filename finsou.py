@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from decimal import Decimal
 from rich import print as rprint
-
+from tqdm import tqdm
 
 def earnings_date_fallback(table_tags):
     """If the earnings date tag is found, use .replace() to parse the date."""
@@ -159,9 +159,22 @@ def research(url):
     """
     page = requests.get(url).text
     soup = BeautifulSoup(page, "html.parser")
-    urls = list(set([node.get("href") for node in soup.find_all(href=True)]))
-    # Normalize trailing backslash in urls.
-    urls = [url[0:-1] for url in urls if url.endswith("/") is True]
+    spans = [span for span in soup.find_all("span") if "href" in str(span)]
+    urls = list()
+    for span in spans:
+        rprint(f"[dark_cyan]{span}[/dark_cyan]")
+        try:
+            divs = span.find("div")
+            for div in divs:
+                rprint(f"[dark_cyan]{div}[/dark_cyan]")
+                url = divs.find("a").get("href")
+                # Normalize trailing backslash in urls.
+                if url.endswith("/"):
+                    url = url[0:-1] 
+                urls.append(url)
+            rprint(f"[deep_sky_blue2]{url}[/deep_sky_blue2]")
+        except TypeError:
+            continue
     rprint("\n[dark_cyan]INVESTOR LINKS\n--------------[/dark_cyan]")
     for url in sorted(set(urls)):
         rprint(f"[deep_sky_blue2]{url}[/deep_sky_blue2]")
@@ -174,7 +187,7 @@ def research(url):
     if len(objects) == 0:
         rprint("[deep_sky_blue2]No media found to download.[/deep_sky_blue2]")
         return None
-    for obj_url in objects:
+    for obj_url in tqdm(set(objects)):
         try:
             obj = obj_url.split("/")[-1]
             urllib.request.urlretrieve(url, filename=obj)
@@ -184,10 +197,12 @@ def research(url):
             rprint(
                 f"[deep_sky_blue2]Forbidden to download file: {obj}[/deep_sky_blue2]"
             )
+        except urllib.error.URLError:
+            rprint(f"[deep_sky_blue2]Failed due to invalid url: {obj}[/deep_sky_blue2]")
         except ValueError:
             traceback.print_exc()
             rprint(f"[deep_sky_blue2]Failed due to invalid url: {obj}[/deep_sky_blue2]")
-        return None
+    return None
 
 
 parser = argparse.ArgumentParser(

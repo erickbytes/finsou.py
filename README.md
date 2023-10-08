@@ -43,10 +43,11 @@ python finsou.py --stocks "TSLA,MSFT,AAPL" --csv "Prices Summary.csv"
 # Read a list of stocks from a text file with one ticker on each line.
 python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
 
-# Get Coca-Cola prices and crawl investor relations website for media.
-python finsou.py -s KO --research https://investors.coca-colacompany.com/
 # Note: this is experimental and results will vary because documents are often hidden from links.
+python finsou.py -s GRAB -r https://investors.grab.com/events-and-presentations
+# Needs to be modified depnding on the HTML structure of the page. URLs are typically buried in nested span and div tags.
 ```
+
 **Example portfolio.txt contents:**
 ```
 META
