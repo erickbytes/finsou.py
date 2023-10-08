@@ -167,7 +167,7 @@ def research(url):
             divs = span.find("div")
             for div in divs:
                 rprint(f"[dark_cyan]{div}[/dark_cyan]")
-                url = divs.find("a").get("href")
+                url = div.find("a").get("href")
                 # Normalize trailing backslash in urls.
                 if url.endswith("/"):
                     url = url[0:-1] 

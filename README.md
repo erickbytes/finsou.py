@@ -21,6 +21,7 @@ pip install beautifulsoup4
 pip install pandas
 pip install requests
 pip install rich
+pip install tqdm
 ```
 
 **CLI Options**
