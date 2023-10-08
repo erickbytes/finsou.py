@@ -9,6 +9,7 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 After hours only. This tool only currently works after the market has closed normal market hours.
 
 **Example Stock Summary**
+`python -m black -s MSFT`
 
 ![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
 

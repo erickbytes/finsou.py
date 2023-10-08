@@ -11,7 +11,7 @@ from rich import print as rprint
 
 
 def earnings_date_fallback(table_tags):
-    
+    """If the earnings date tag is found, use .replace() to parse the date."""
     earnings_date_tag = [span for span in table_tags if ", " in str(span)]
     if "DIVIDEND" in str(earnings_date_tag[0]):
         return "N/A"
@@ -23,6 +23,7 @@ def earnings_date_fallback(table_tags):
         .replace("</span></td>", "")
     )
     return earnings_date
+
 
 def yahoo_finance_prices(url, stock):
     """Parse Yahoo Finance HTML price and after hours price info.
@@ -114,7 +115,7 @@ def yahoo_finance_prices(url, stock):
         earnings_date = "N/A"
     ex_dividend_date_tag = [span for span in table_tags if ", " in str(span.string)]
     if ex_dividend_date_tag and "DIVIDEND" in str(ex_dividend_date_tag[0]):
-        ex_dividend_date = ex_dividend_date_tag[0].string                        
+        ex_dividend_date = ex_dividend_date_tag[0].string
     else:
         try:
             ex_dividend_date = ex_dividend_date_tag[1].string
@@ -147,8 +148,8 @@ def research(url):
     The urllib urlretrieve function copies a network object to local file.
     The second argument, if present, specifies the file location to copy to.
     If filename is absent, the location will be a tempfile with a generated name.
-    
-    Note: this will only return files if the website lists them as links, 
+
+    Note: this will only return files if the website lists them as links,
     so it will not work on every stock.
 
     https://docs.python.org/3/library/urllib.request.html#urllib.request.urlretrieve
@@ -177,7 +178,9 @@ def research(url):
             rprint(f"[deep_sky_blue2]New network object saved: {obj}[/deep_sky_blue2]")
         except urllib.error.HTTPError:
             traceback.print_exc()
-            rprint(f"[deep_sky_blue2]Forbidden to download file: {obj}[/deep_sky_blue2]")
+            rprint(
+                f"[deep_sky_blue2]Forbidden to download file: {obj}[/deep_sky_blue2]"
+            )
         except ValueError:
             traceback.print_exc()
             rprint(f"[deep_sky_blue2]Failed due to invalid url: {obj}[/deep_sky_blue2]")
