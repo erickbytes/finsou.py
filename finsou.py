@@ -136,7 +136,10 @@ def yahoo_finance_prices(url, stock):
     Ex-Dividend Date: {ex_dividend_date}"""
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
     summary = "\n".join(lines)
-    rprint(f"[dark_cyan]{summary}[/dark_cyan]", sep="\n")
+    if "SELL-OFF" in summary:
+        rprint(f"[red]{summary}[/red]", sep="\n")
+    else:
+        rprint(f"[dark_cyan]{summary}[/dark_cyan]", sep="\n")
     return summary, ah_pct_change
 
 
@@ -208,11 +211,11 @@ except TypeError:
     stocks = []
 prices = list()
 for stock in stocks:
-    rprint(f"\n[deep_sky_blue2]------\n|{stock}|\n------[/deep_sky_blue2]")
+    rprint(f"\n[steel_blue]------\n|{stock}|\n------[/steel_blue]")
     url = f"https://finance.yahoo.com/quote/{stock}/"
     summary, ah_pct_change = yahoo_finance_prices(url, stock)
     prices.append([stock, summary, url, ah_pct_change])
-    rprint(f"[deep_sky_blue2]{url}[/deep_sky_blue2]")
+    rprint(f"[steel_blue]{url}[/steel_blue]")
     # Added time delay between each request to avoid too many hits too fast.
     time.sleep(2)
 if args.csv:
