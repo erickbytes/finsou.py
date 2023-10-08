@@ -10,7 +10,7 @@ After hours only. This tool only currently works after the market has closed nor
 
 **Example Stock Summary**
 
-`python -m black -s MSFT`
+`python finsou.py -s MSFT`
 
 ![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
 
