@@ -11,7 +11,10 @@ from rich import print as rprint
 
 
 def earnings_date_fallback(table_tags):
+    
     earnings_date_tag = [span for span in table_tags if ", " in str(span)]
+    if "DIVIDEND" in str(earnings_date_tag[0]):
+        return "N/A"
     span = '<td class="Ta(end) Fw(600) Lh(14px)" data-test="EARNINGS_DATE-value"><span>'
     earnings_date = (
         str(earnings_date_tag[0])
@@ -123,11 +126,11 @@ def yahoo_finance_prices(url, stock):
     Regular Market $ Close: {mkt_close_price}
     Daily % Change: {daily_pct_change}
     Daily $ Change: {daily_price_change}
-    ----------------------------------
+    -----------------------------
     After Hours % Change: {ah_pct_change}
     After Hours $ Change: {ah_price_change}
     Post Market $ Close: {post_mkt_price}
-    ----------------------------------
+    -----------------------------
     Earnings Date: {earnings_date}
     Ex-Dividend Date: {ex_dividend_date}"""
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
@@ -202,7 +205,7 @@ except TypeError:
     stocks = []
 prices = list()
 for stock in stocks:
-    rprint(f"\n[deep_sky_blue2]{stock}[/deep_sky_blue2]")
+    rprint(f"\n[deep_sky_blue2]------\n|{stock}|\n------[/deep_sky_blue2]")
     url = f"https://finance.yahoo.com/quote/{stock}/"
     summary, ah_pct_change = yahoo_finance_prices(url, stock)
     prices.append([stock, summary, url, ah_pct_change])

@@ -9,30 +9,15 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 After hours only. This tool only currently works after the market has closed normal market hours.
 
 **Example Stock Summary**
-```
-python finsou.py -s MSFT
 
-MSFT
+![stock summary example]("finsou.py example.png" "Fetch a Stock Summary")
 
-SOLID GREEN DAY!
-Market Price $ Open: 319.36
-Regular Market $ Close: 327.26
-Daily % Change: +2.47%
-Daily $ Change: +7.90
-----------------------------------
-After Hours % Change: +0.59%
-After Hours $ Change: +1.92
-Post Market $ Close: 329.18
-----------------------------------
-Earnings Date: Oct 23, 2023 - Oct 27, 2023
-Ex-Dividend Date: Nov 15, 2023
-https://finance.yahoo.com/quote/MSFT/
-```
 **Install Python Library Dependencies**
 ```
 pip install beautifulsoup4
 pip install pandas
 pip install requests
+pip install rich
 ```
 
 **CLI Options**
@@ -57,6 +42,7 @@ python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
 
 # Get Coca-Cola prices and crawl investor relations website for media.
 python finsou.py -s KO --research https://investors.coca-colacompany.com/
+# Note: this will only return files if the website lists them as links, so it will not work on every stock.
 ```
 **Example portfolio.txt contents:**
 ```
