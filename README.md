@@ -36,17 +36,17 @@ pip install tqdm
 **Examples**
 ```
 # Summarize a list of stocks.
-python finsou.py -s "SPOT,DDOG,NET"
+python finsou.py -s SPOT,DDOG,NET
 
 # Write price summaries to csv.
-python finsou.py --stocks "TSLA,MSFT,AAPL" --csv "Prices Summary.csv"
+python finsou.py --stocks TSLA,MSFT,AAPL --csv "Prices Summary.csv"
 
 # Read a list of stocks from a text file with one ticker on each line.
 python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
 
-# Note: this is experimental and results will vary because documents are often hidden from links.
+# Note: this is experimental and results will vary.
 python finsou.py -s GRAB -r https://investors.grab.com/events-and-presentations
-# Needs to be modified depnding on the HTML structure of the page. URLs are typically buried in nested span and div tags.
+# Currently needs to be modified depending on the HTML structure of the page. URLs are typically buried in nested span and div tags.
 ```
 
 **Example portfolio.txt contents:**
