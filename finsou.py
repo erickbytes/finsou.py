@@ -138,6 +138,8 @@ def yahoo_finance_prices(url, stock):
     summary = "\n".join(lines)
     if "SELL-OFF" in summary:
         rprint(f"[red]{summary}[/red]", sep="\n")
+    elif float(daily_price_change) + float(ah_price_change) < 0:
+        rprint(f"[red]{summary}[/red]", sep="\n")
     else:
         rprint(f"[dark_cyan]{summary}[/dark_cyan]", sep="\n")
     return summary, ah_pct_change
