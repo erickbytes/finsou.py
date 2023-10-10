@@ -10,20 +10,6 @@ from decimal import Decimal
 from rich import print as rprint
 from tqdm import tqdm
 
-def earnings_date_fallback(table_tags):
-    """If the earnings date tag is found, use .replace() to parse the date."""
-    earnings_date_tag = [span for span in table_tags if ", " in str(span)]
-    if "DIVIDEND" in str(earnings_date_tag[0]):
-        return "N/A"
-    span = '<td class="Ta(end) Fw(600) Lh(14px)" data-test="EARNINGS_DATE-value"><span>'
-    earnings_date = (
-        str(earnings_date_tag[0])
-        .replace(span, "")
-        .replace("</span> - <span>", " - ")
-        .replace("</span></td>", "")
-    )
-    return earnings_date
-
 
 def yahoo_finance_prices(url, stock):
     """Parse Yahoo Finance HTML price and after hours price info.
@@ -60,14 +46,6 @@ def yahoo_finance_prices(url, stock):
     percent = (
         daily_pct_change.replace("-", "").replace("+", "").replace("%", "").strip()
     )
-    info = list()
-    # Display message if stock had a big daily move.
-    if "+" in daily_pct_change and float(percent) > 4:
-        info.append("MONSTER BREAKOUT!")
-    elif "+" in daily_pct_change and float(percent) >= 1 and float(percent) <= 4:
-        info.append("SOLID GREEN DAY!")
-    elif "-" in daily_pct_change and float(percent) > 4:
-        info.append("SELL-OFF ALERT!")
     post_mkt_tags = soup.find_all(class_=re.compile("Mstart\(4px\)"))
     post_mkt_tags = [span.string for span in post_mkt_tags]
     ah_price_change = post_mkt_tags[0]
@@ -75,6 +53,27 @@ def yahoo_finance_prices(url, stock):
     ah_decimal_pct = float(
         ah_pct_change.replace("-", "").replace("%", "").replace("+", "")
     )
+    info = list()
+    # Display message if stock had a big daily move + didn't lose gains after hours and vice versa.
+    if (
+        "+" in daily_pct_change
+        and float(percent) > 4
+        and float(daily_price_change) + float(ah_price_change) > 0
+    ):
+        info.append("MONSTER BREAKOUT!")
+    elif (
+        "+" in daily_pct_change
+        and float(percent) >= 1
+        and float(percent) <= 4
+        and float(daily_price_change) + float(ah_price_change) > 0
+    ):
+        info.append("SOLID GREEN DAY!")
+    elif (
+        "-" in daily_pct_change
+        and float(percent) > 4
+        and float(daily_price_change) + float(ah_price_change) < 0
+    ):
+        info.append("SELL-OFF ALERT!")
     # Display message if a stock shows activity after hours.
     if "+" in ah_pct_change and ah_decimal_pct > 3:
         info.append("AFTER HOURS MOVER!")
@@ -103,14 +102,17 @@ def yahoo_finance_prices(url, stock):
     # table_tags is a reference to the table of stats below the chart.
     table_tags = soup.find_all(class_=re.compile("Ta\(end\) Fw\(600\) Lh\(14px\)"))
     try:
-        earnings_date_tags = [span for span in table_tags if ", " in str(span.string)]
-        # This is a fallback for some stocks because beautiful soup doesn't work for tags with multiple spans.
-        if "EARNING" not in str(earnings_date_tags[0]):
-            earnings_date = earnings_date_fallback(table_tags)
+        earnings_date_tag = [span for span in table_tags if "EARNING" in str(span)][0]
+        if "N/A" in str(earnings_date_tag):
+            earnings_date = "N/A"
         else:
-            earnings_date = earnings_date_tags[0].string
-    except TypeError:
-        earnings_date = earnings_date_fallback(table_tags)
+            span = '<td class="Ta(end) Fw(600) Lh(14px)" data-test="EARNINGS_DATE-value"><span>'
+            earnings_date = (
+                str(earnings_date_tag)
+                .replace(span, "")
+                .replace("</span> - <span>", " - ")
+                .replace("</span></td>", "")
+            )
     except IndexError:
         earnings_date = "N/A"
     ex_dividend_date_tag = [span for span in table_tags if ", " in str(span.string)]
@@ -136,9 +138,7 @@ def yahoo_finance_prices(url, stock):
     Ex-Dividend Date: {ex_dividend_date}"""
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
     summary = "\n".join(lines)
-    if "SELL-OFF" in summary:
-        rprint(f"[red]{summary}[/red]", sep="\n")
-    elif float(daily_price_change) + float(ah_price_change) < 0:
+    if float(daily_price_change) + float(ah_price_change) < 0:
         rprint(f"[red]{summary}[/red]", sep="\n")
     else:
         rprint(f"[dark_cyan]{summary}[/dark_cyan]", sep="\n")
@@ -172,7 +172,7 @@ def research(url):
                 url = div.find("a").get("href")
                 # Normalize trailing backslash in urls.
                 if url.endswith("/"):
-                    url = url[0:-1] 
+                    url = url[0:-1]
                 urls.append(url)
             rprint(f"[deep_sky_blue2]{url}[/deep_sky_blue2]")
         except TypeError:
@@ -240,7 +240,9 @@ for stock in stocks:
         # Added time delay between each request to avoid too many hits too fast.
         time.sleep(2)
     except IndexError:
-        rprint(f"[red]Failed to get stock report for {stock}. Try again after hours.[/red]")
+        rprint(
+            f"[red]Failed to get stock report for {stock}. Try again after hours.[/red]"
+        )
         prices.append([stock, "N/A", url, "N/A"])
         continue
 if args.csv:
