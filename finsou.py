@@ -228,7 +228,7 @@ except TypeError:
     stocks = []
 prices = list()
 for stock in stocks:
-    rprint(f"\n[steel_blue]------\n|{stock}|\n------[/steel_blue]")
+    rprint(f"\n[steel_blue]------\n|{stock.upper()}|\n------[/steel_blue]")
     url = f"https://finance.yahoo.com/quote/{stock}/"
     summary, ah_pct_change = yahoo_finance_prices(url, stock)
     prices.append([stock, summary, url, ah_pct_change])
