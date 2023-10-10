@@ -221,20 +221,28 @@ try:
         with open(args.stocks, "r") as f:
             stocks = f.readlines()
         stocks = [line.strip() for line in stocks if line.isspace() is not True]
-        rprint("[deep_sky_blue2]Loaded stocks from portfolio.txt.[/deep_sky_blue2]")
+        rprint("\n[deep_sky_blue2]Loaded stocks from portfolio.txt.[/deep_sky_blue2]")
     else:
         stocks = args.stocks.split(",")
 except TypeError:
     stocks = []
 prices = list()
+stocks = [stock.upper().strip() for stock in stocks]
 for stock in stocks:
-    rprint(f"\n[steel_blue]------\n|{stock.upper()}|\n------[/steel_blue]")
+    # Dynamically size the box around ticker name based on its length.
+    line = (len(stock) * "-") + "--"
+    rprint(f"\n[steel_blue]{line}\n|{stock}|\n{line}[/steel_blue]")
     url = f"https://finance.yahoo.com/quote/{stock}/"
-    summary, ah_pct_change = yahoo_finance_prices(url, stock)
-    prices.append([stock, summary, url, ah_pct_change])
-    rprint(f"[steel_blue]{url}[/steel_blue]")
-    # Added time delay between each request to avoid too many hits too fast.
-    time.sleep(2)
+    try:
+        summary, ah_pct_change = yahoo_finance_prices(url, stock)
+        prices.append([stock, summary, url, ah_pct_change])
+        rprint(f"[steel_blue]{url}[/steel_blue]")
+        # Added time delay between each request to avoid too many hits too fast.
+        time.sleep(2)
+    except IndexError:
+        rprint(f"[red]Failed to get stock report for {stock}. Try again after hours.[/red]")
+        prices.append([stock, "N/A", url, "N/A"])
+        continue
 if args.csv:
     cols = ["Stock", "Price_Summary", "URL", "AH_%_Change"]
     stock_prices = pd.DataFrame(prices, columns=cols)
