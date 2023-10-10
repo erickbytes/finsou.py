@@ -241,7 +241,7 @@ for stock in tqdm(stocks):
         time.sleep(2)
     except IndexError:
         rprint(
-            f"[red]Failed to get stock report for {stock}. Try again after hours.[/red]"
+            f"[red]Failed to get stock report for {stock}. 'Over the counter' stocks do not list after hours prices so that may be why. Otherwise, try again after hours.[/red]"
         )
         prices.append([stock, "N/A", url, "N/A"])
         continue
