@@ -8,7 +8,10 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 - see a color coded report, green or red, report based on the sum of regular market and after hours price moves
 - download earnings reports and media with urllib
 
-After hours only. This tool only currently works after the market has closed normal market hours.
+**Caveats**
+- After hours only. This tool only currently works after the market has closed normal market hours.
+- After hours prices for "over the counter" (OTC) traded stocks are not listed on Yahoo.
+
 
 **Example Stock Summary**
 
