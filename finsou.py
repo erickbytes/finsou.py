@@ -228,7 +228,7 @@ except TypeError:
     stocks = []
 prices = list()
 stocks = [stock.upper().strip() for stock in stocks]
-for stock in stocks:
+for stock in tqdm(stocks):
     # Dynamically size the box around ticker name based on its length.
     line = (len(stock) * "-") + "--"
     rprint(f"\n[steel_blue]{line}\n|{stock}|\n{line}[/steel_blue]")
@@ -236,7 +236,7 @@ for stock in stocks:
     try:
         summary, ah_pct_change = yahoo_finance_prices(url, stock)
         prices.append([stock, summary, url, ah_pct_change])
-        rprint(f"[steel_blue]{url}[/steel_blue]")
+        rprint(f"[steel_blue]{url}[/steel_blue]\n")
         # Added time delay between each request to avoid too many hits too fast.
         time.sleep(2)
     except IndexError:
