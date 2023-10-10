@@ -5,7 +5,7 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 - see market open, daily price action, market close and after hours summary for each stock in your terminal
 - see upcoming earnings date and ex-dividend date
 - export price summaries queried to csv
-- see a color coded report, green or red, report based on sum of regular market and after hours prices
+- see a color coded report, green or red, report based on the sum of regular market and after hours price moves
 - download earnings reports and media with urllib
 
 After hours only. This tool only currently works after the market has closed normal market hours.
