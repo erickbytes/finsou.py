@@ -231,7 +231,7 @@ stocks = [stock.upper().strip() for stock in stocks]
 for stock in tqdm(stocks):
     # Dynamically size the box around ticker name based on its length.
     line = (len(stock) * "-") + "--"
-    rprint(f"\n[steel_blue]{line}\n|{stock}|\n{line}[/steel_blue]")
+    rprint(f"\n\n[steel_blue]{line}\n|{stock}|\n{line}[/steel_blue]")
     url = f"https://finance.yahoo.com/quote/{stock}/"
     try:
         summary, ah_pct_change = yahoo_finance_prices(url, stock)
