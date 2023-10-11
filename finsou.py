@@ -60,25 +60,25 @@ def yahoo_finance_prices(url, stock):
         and float(percent) > 4
         and float(daily_price_change) + float(ah_price_change) > 0
     ):
-        info.append("MONSTER BREAKOUT!")
+        info.append("(!) MONSTER BREAKOUT")
     elif (
         "+" in daily_pct_change
         and float(percent) >= 1
         and float(percent) <= 4
         and float(daily_price_change) + float(ah_price_change) > 0
     ):
-        info.append("SOLID GREEN DAY!")
+        info.append("(+) SOLID GREEN DAY")
     elif (
         "-" in daily_pct_change
         and float(percent) > 4
         and float(daily_price_change) + float(ah_price_change) < 0
     ):
-        info.append("SELL-OFF ALERT!")
+        info.append("(!) SELL-OFF ALERT")
     # Display message if a stock shows activity after hours.
     if "+" in ah_pct_change and ah_decimal_pct > 3:
-        info.append("AFTER HOURS MOVER!")
+        info.append("(+) AFTER HOURS MOVER")
     elif "-" in ah_pct_change and ah_decimal_pct > 3:
-        info.append("AFTER HOURS SELL-OFF!")  
+        info.append("(!) AFTER HOURS SELL-OFF")  
     notice = soup.find_all(
         class_=re.compile("LineClamp\(2\) Va\(m\) Tov\(e\)")
     )
