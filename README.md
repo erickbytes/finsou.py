@@ -19,6 +19,10 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 
 ![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
 
+
+To learn more details about this project, read my blog post [here](https://lofipython.com/making-a-yahoo-stock-price-summary-cli-with-python).
+
+
 **Install Python Library Dependencies**
 ```
 pip install beautifulsoup4
