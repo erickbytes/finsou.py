@@ -23,12 +23,13 @@ def yahoo_finance_prices(url, stock):
     https://beautiful-soup-4.readthedocs.io/en/latest/#searching-by-css-class
     https://docs.python.org/3/library/re.html#re.compile
     """
-    user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.1 (KHTML, like Gecko) Chrome/43.0.845.0 Safari/534.1"
+    # user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.1 (KHTML, like Gecko) Chrome/43.0.845.0 Safari/534.1"
+    user_agent = "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"
     headers = {
         "Cache-Control": "no-cache",
         "User-Agent": user_agent,
     }
-    page = requests.get(url, headers=headers).text
+    page = requests.get(url, headers=headers, stream=False).text
     soup = BeautifulSoup(page, "html.parser")
     price_tags = soup.find_all(
         class_=re.compile("Fw\(b\) Fz\(36px\) Mb\(\-4px\) D\(ib\)")
