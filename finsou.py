@@ -92,7 +92,8 @@ def yahoo_finance_prices(url, stock):
         )
         post_mkt_price = post_mkt_price_tags[0].string
     except IndexError:
-        print("Market still in progress, check back later for after hours prices.")
+        message = f"[red]Failed to get stock report for {stock}. 'Over the counter' stocks do not list after hours prices so that may be why. Otherwise, try again after hours.[/red]"
+        rprint(message)
         post_mkt_price = "N/A"
     # Calculate market open price from day change and close price.
     if "+" in daily_price_change:
