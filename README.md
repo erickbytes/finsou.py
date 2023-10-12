@@ -11,6 +11,7 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 **Caveats**
 - After hours only. This tool only currently works after the market has closed normal market hours.
 - After hours prices for "over the counter" (OTC) traded stocks are not listed on Yahoo.
+- Fetching a stock report takes about 3 seconds. After about 50 stock requests, it appears Yahoo throttles the HTTP request and there is a substantial delay.
 
 **Example Stock Summary**
 
@@ -51,9 +52,8 @@ python finsou.py --stocks TSLA,MSFT,AAPL --csv "Prices Summary.csv"
 # Read a list of stocks from a text file with one ticker on each line.
 python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
 
-# Note: this is experimental and results will vary.
-python finsou.py -s GRAB -r https://investors.grab.com/events-and-presentations
 # Currently needs to be modified depending on the HTML structure of the page. URLs are typically buried in nested span and div tags.
+python finsou.py -s GRAB -r https://investors.grab.com/events-and-presentations
 ```
 
 **Example portfolio.txt contents:**
