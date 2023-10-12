@@ -29,7 +29,7 @@ def yahoo_finance_prices(url, stock):
         "Cache-Control": "no-cache",
         "User-Agent": user_agent,
     }
-    page = requests.get(url, headers=headers, stream=False).text
+    page = requests.get(url, headers=headers).text
     soup = BeautifulSoup(page, "html.parser")
     price_tags = soup.find_all(
         class_=re.compile("Fw\(b\) Fz\(36px\) Mb\(\-4px\) D\(ib\)")
@@ -247,7 +247,8 @@ for stock in tqdm(stocks):
         prices.append([stock, summary, url, ah_pct_change])
         rprint(f"[steel_blue]{url}[/steel_blue]\n")
         # Added time delay between each request to avoid too many hits too fast.
-        time.sleep(2)
+        if len(stocks) > 1:
+            time.sleep(1)
     except IndexError:
         rprint(
             f"[red]Failed to get stock report for {stock}. 'Over the counter' stocks do not list after hours prices so that may be why. Otherwise, try again after hours.[/red]"
