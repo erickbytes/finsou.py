@@ -5,10 +5,10 @@ import traceback
 import urllib
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 from decimal import Decimal
 from rich import print as rprint
 from tqdm import tqdm
+# lazy import only if csv argument given: import pandas as pd
 
 
 def yahoo_finance_prices(url, stock):
@@ -256,6 +256,7 @@ for stock in tqdm(stocks):
         prices.append([stock, "N/A", url, "N/A"])
         continue
 if args.csv:
+    import pandas as pd
     cols = ["Stock", "Price_Summary", "URL", "AH_%_Change"]
     stock_prices = pd.DataFrame(prices, columns=cols)
     stock_prices["Percent_Change"] = (
