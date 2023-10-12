@@ -11,7 +11,7 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 **Caveats**
 - After hours only. This tool only currently works after the market has closed normal market hours.
 - After hours prices for "over the counter" (OTC) traded stocks are not listed on Yahoo.
-
+- This works best when you're only fetching a few stocks. You'll likely get rate limited by Yahoo after so many requests.
 
 **Example Stock Summary**
 
