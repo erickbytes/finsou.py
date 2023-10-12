@@ -230,7 +230,7 @@ try:
         with open(args.stocks, "r") as f:
             stocks = f.readlines()
         stocks = [line.strip() for line in stocks if line.isspace() is not True]
-        rprint("\n[deep_sky_blue2]Loaded stocks from portfolio.txt.[/deep_sky_blue2]")
+        rprint(f"\n[deep_sky_blue2]Loaded stocks from {args.stocks}.[/deep_sky_blue2]\n")
     else:
         stocks = args.stocks.split(",")
 except TypeError:
