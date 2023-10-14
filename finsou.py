@@ -137,6 +137,16 @@ def yahoo_finance_prices(url, stock):
     )
     if company_name:
         company_name = company_name[0].string
+    pe_ratio = [tag for tag in table_tags if "PE_RATIO" in str(tag)]
+    if pe_ratio:
+        pe_ratio = pe_ratio[0].string
+    # Only check for dividend yield if ex-dividend date is not N/A.
+    if ex_dividend_date != "N/A":
+        dividend_yield = [tag for tag in table_tags if "DIVIDEND_AND_YIELD" in str(tag)]
+        if dividend_yield:
+            dividend_yield = dividend_yield[0].string
+    else:
+        dividend_yield == "N/A"
     alerts = "\n".join(info)
     summary = f"""\n
     {company_name}
@@ -152,7 +162,10 @@ def yahoo_finance_prices(url, stock):
     Post Market $ Close: {post_mkt_price}
     -----------------------------
     Earnings Date: {earnings_date}
-    Ex-Dividend Date: {ex_dividend_date}"""
+    PE Ratio: {pe_ratio}
+    Ex-Dividend Date: {ex_dividend_date}
+    Forward Dividend & Yield: {dividend_yield}
+    """
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
     summary = "\n".join(lines)
     if float(daily_price_change) + float(ah_price_change) < 0:
