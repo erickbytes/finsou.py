@@ -132,8 +132,16 @@ def yahoo_finance_prices(url, stock):
             ex_dividend_date = ex_dividend_date_tag[1].string
         except:
             ex_dividend_date = "N/A"
+    company_name = soup.find_all(
+        class_=re.compile("D\(ib\) Fz\(18px\)")
+    )
+    if company_name:
+        company_name = company_name[0].string
     alerts = "\n".join(info)
-    summary = f"""{alerts}
+    summary = f"""\n
+    {company_name}
+    {alerts}
+    -----------------------------
     Market Price $ Open: {open_price}
     Regular Market $ Close: {mkt_close_price}
     Daily % Change: {daily_pct_change}
@@ -238,9 +246,6 @@ except TypeError:
 prices = list()
 stocks = [stock.upper().strip() for stock in stocks]
 for stock in tqdm(stocks):
-    # Dynamically size the box around ticker name based on its length.
-    line = (len(stock) * "-") + "--"
-    rprint(f"\n\n[steel_blue]{line}\n|{stock}|\n{line}[/steel_blue]")
     url = f"https://finance.yahoo.com/quote/{stock}/"
     try:
         summary, ah_pct_change = yahoo_finance_prices(url, stock)
