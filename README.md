@@ -11,11 +11,11 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 **Caveats**
 - After hours only. This tool only currently works after the market has closed normal market hours.
 - After hours prices for "over the counter" (OTC) traded stocks are not listed on Yahoo.
-- Fetching a stock report takes about 3 seconds. After about 50 stock requests, it appears Yahoo throttles the HTTP request and there is a substantial delay.
+- Fetching a stock report takes about 3 seconds. After about 50 stock requests, you might get throttled on the HTTP request and there is a substantial delay.
 
 **Example Stock Summary**
 
-`python finsou.py -s AEO`
+`python finsou.py -s TXN`
 
 ![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
 
