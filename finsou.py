@@ -146,7 +146,7 @@ def yahoo_finance_prices(url, stock):
         if dividend_yield:
             dividend_yield = dividend_yield[0].string
     else:
-        dividend_yield == "N/A"
+        dividend_yield = "N/A"
     alerts = "\n".join(info)
     summary = f"""\n
     {company_name}
