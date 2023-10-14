@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from decimal import Decimal
 from rich import print as rprint
 from tqdm import tqdm
-# lazy import only if csv argument given: import pandas as pd
+# Chose to delay import only if csv argument given: import pandas as pd
 
 
 def yahoo_finance_prices(url, stock):
@@ -256,6 +256,7 @@ for stock in tqdm(stocks):
         prices.append([stock, "N/A", url, "N/A"])
         continue
 if args.csv:
+    # Importing here shaves 1 second off the CLI when CSV is not required.
     import pandas as pd
     cols = ["Stock", "Price_Summary", "URL", "AH_%_Change"]
     stock_prices = pd.DataFrame(prices, columns=cols)
