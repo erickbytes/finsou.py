@@ -258,6 +258,7 @@ except TypeError:
     stocks = []
 prices = list()
 stocks = [stock.upper().strip() for stock in stocks]
+error_message = f"[red]Stock report failed for {stock}. 'Over the counter' stocks don't post after hours prices. Try another stock or try again later.[/red]"
 for stock in tqdm(stocks):
     url = f"https://finance.yahoo.com/quote/{stock}/"
     try:
@@ -268,9 +269,11 @@ for stock in tqdm(stocks):
         if len(stocks) > 1:
             time.sleep(1)
     except IndexError:
-        rprint(
-            f"[red]Failed to get stock report for {stock}. 'Over the counter' stocks do not list after hours prices so that may be why. Otherwise, try again after hours.[/red]"
-        )
+        rprint(error_message)
+        prices.append([stock, "N/A", url, "N/A"])
+        continue
+    except AttributeError:
+        rprint(error_message)
         prices.append([stock, "N/A", url, "N/A"])
         continue
 if args.csv:
