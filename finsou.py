@@ -1,7 +1,9 @@
 import argparse
+import os
 import re
 import time
 import traceback
+import warnings
 import urllib
 import requests
 from bs4 import BeautifulSoup
@@ -189,12 +191,15 @@ def research(url):
 
     https://docs.python.org/3/library/urllib.request.html#urllib.request.urlretrieve
     """
-    page = requests.get(url).text
+    user_agent = "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"
+    headers = {
+        "Cache-Control": "no-cache",
+        "User-Agent": user_agent,
+    }
+    page = requests.get(url, headers=headers).text
     soup = BeautifulSoup(page, "html.parser")
     urls = [tag.get("href") for tag in soup.find_all(href=True)]
     rprint("\n[dark_cyan]INVESTOR LINKS\n--------------[/dark_cyan]")
-    for url in sorted(set(urls)):
-        rprint(f"[deep_sky_blue2]{url}[/deep_sky_blue2]")
     pdfs = [url for url in urls if url.endswith(".pdf")]
     csvs = [url for url in urls if url.endswith(".csv")]
     mp4s = [url for url in urls if url.endswith(".mp4")]
@@ -204,13 +209,21 @@ def research(url):
     if len(objects) == 0:
         rprint("[deep_sky_blue2]No media found to download.[/deep_sky_blue2]")
         return None
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        opener = urllib.request.URLopener()
+        opener.addheader("User-Agent", user_agent)
+    if stock:
+        path = f"{stock}_downloads"
+    else:
+        path = "downloads"
+    os.makedirs(path, exist_ok=True)
     for obj_url in tqdm(set(objects)):
         try:
             obj = obj_url.split("/")[-1]
-            urllib.request.urlretrieve(url, filename=obj)
+            opener.retrieve(url, filename=f"{path}/{obj}")
             rprint(f"[deep_sky_blue2]New media file saved: {obj}[/deep_sky_blue2]")
         except urllib.error.HTTPError:
-            traceback.print_exc()
             rprint(
                 f"[deep_sky_blue2]Forbidden to download file: {obj}[/deep_sky_blue2]"
             )
