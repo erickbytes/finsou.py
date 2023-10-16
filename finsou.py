@@ -191,22 +191,7 @@ def research(url):
     """
     page = requests.get(url).text
     soup = BeautifulSoup(page, "html.parser")
-    spans = [span for span in soup.find_all("span") if "href" in str(span)]
-    urls = list()
-    for span in spans:
-        rprint(f"[dark_cyan]{span}[/dark_cyan]")
-        try:
-            divs = span.find("div")
-            for div in divs:
-                rprint(f"[dark_cyan]{div}[/dark_cyan]")
-                url = div.find("a").get("href")
-                # Normalize trailing backslash in urls.
-                if url.endswith("/"):
-                    url = url[0:-1]
-                urls.append(url)
-            rprint(f"[deep_sky_blue2]{url}[/deep_sky_blue2]")
-        except TypeError:
-            continue
+    urls = [tag.get("href") for tag in soup.find_all(href=True)]
     rprint("\n[dark_cyan]INVESTOR LINKS\n--------------[/dark_cyan]")
     for url in sorted(set(urls)):
         rprint(f"[deep_sky_blue2]{url}[/deep_sky_blue2]")
@@ -223,7 +208,7 @@ def research(url):
         try:
             obj = obj_url.split("/")[-1]
             urllib.request.urlretrieve(url, filename=obj)
-            rprint(f"[deep_sky_blue2]New network object saved: {obj}[/deep_sky_blue2]")
+            rprint(f"[deep_sky_blue2]New media file saved: {obj}[/deep_sky_blue2]")
         except urllib.error.HTTPError:
             traceback.print_exc()
             rprint(
@@ -258,7 +243,6 @@ except TypeError:
     stocks = []
 prices = list()
 stocks = [stock.upper().strip() for stock in stocks]
-error_message = f"[red]Stock report failed for {stock}. 'Over the counter' stocks don't post after hours prices. Try another stock or try again later.[/red]"
 for stock in tqdm(stocks):
     url = f"https://finance.yahoo.com/quote/{stock}/"
     try:
@@ -269,10 +253,12 @@ for stock in tqdm(stocks):
         if len(stocks) > 1:
             time.sleep(1)
     except IndexError:
+        error_message = f"[red]Stock report failed for {stock}. 'Over the counter' stocks don't post after hours prices. Try another stock or try again later.[/red]"
         rprint(error_message)
         prices.append([stock, "N/A", url, "N/A"])
         continue
     except AttributeError:
+        error_message = f"[red]Stock report failed for {stock}. 'Over the counter' stocks don't post after hours prices. Try another stock or try again later.[/red]"
         rprint(error_message)
         prices.append([stock, "N/A", url, "N/A"])
         continue
