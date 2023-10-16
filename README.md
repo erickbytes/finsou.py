@@ -52,6 +52,7 @@ python finsou.py --stocks TSLA,MSFT,AAPL --csv "Prices Summary.csv"
 # Read a list of stocks from a text file with one ticker on each line.
 python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
 
+# Scan investor relations site and download all media from urls.
 python finsou.py -s KO -r https://investors.coca-colacompany.com/financial-information/financial-results
 ```
 
