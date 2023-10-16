@@ -213,7 +213,7 @@ def research(url):
         warnings.simplefilter("ignore")
         opener = urllib.request.URLopener()
         opener.addheader("User-Agent", user_agent)
-    if stock:
+    if "stock" in locals():
         path = f"{stock}_downloads"
     else:
         path = "downloads"
