@@ -205,6 +205,8 @@ def research(url, path):
     docs = [url for url in urls if url.endswith(".docx")]
     xls = [url for url in urls if url.endswith(".xlsx")]
     objects = pdfs + csvs + mp4s + docs + xls
+    # Remove urls that are relative links, not full url to file.
+    objects = [url for url in objects if "http" in url]
     if len(objects) == 0:
         rprint("[deep_sky_blue2]No media found to download.[/deep_sky_blue2]")
         return None
