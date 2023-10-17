@@ -3,7 +3,6 @@ import os
 import re
 import time
 import traceback
-import warnings
 import urllib
 import requests
 from bs4 import BeautifulSoup
@@ -209,21 +208,19 @@ def research(url, path):
     if len(objects) == 0:
         rprint("[deep_sky_blue2]No media found to download.[/deep_sky_blue2]")
         return None
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        opener = urllib.request.URLopener()
-        opener.addheader("User-Agent", user_agent)
     os.makedirs(path, exist_ok=True)
     for obj_url in tqdm(set(objects)):
         try:
             obj = obj_url.split("/")[-1]
-            opener.retrieve(url, filename=f"{path}/{obj}")
+            with requests.get(obj_url, headers=headers, stream=True) as response:
+                with open(f"{path}/{obj}", 'wb') as file_handle:
+                    file_handle.write(response.content)
             rprint(f"[deep_sky_blue2]New media file saved: {obj}[/deep_sky_blue2]")
         except urllib.error.HTTPError:
             rprint(
                 f"[deep_sky_blue2]Forbidden to download file: {obj}[/deep_sky_blue2]"
             )
-        except urllib.error.URLError:
+        except requests.exceptions.MissingSchema:
             rprint(f"[deep_sky_blue2]Failed due to invalid url: {obj}[/deep_sky_blue2]")
         except ValueError:
             traceback.print_exc()
