@@ -177,7 +177,7 @@ def yahoo_finance_prices(url, stock):
     return summary, ah_pct_change
 
 
-def research(url):
+def research(url, path):
     """Parse HTML with Python's html.parser and bs4.
     Select all nodes with an href value, print the urls and
     filter the file object urls with list comprehensions for download.
@@ -199,7 +199,7 @@ def research(url):
     page = requests.get(url, headers=headers).text
     soup = BeautifulSoup(page, "html.parser")
     urls = [tag.get("href") for tag in soup.find_all(href=True)]
-    rprint("\n[dark_cyan]INVESTOR LINKS\n--------------[/dark_cyan]")
+    rprint("\n[dark_cyan]INVESTOR MEDIA\n--------------[/dark_cyan]")
     pdfs = [url for url in urls if url.endswith(".pdf")]
     csvs = [url for url in urls if url.endswith(".csv")]
     mp4s = [url for url in urls if url.endswith(".mp4")]
@@ -213,10 +213,6 @@ def research(url):
         warnings.simplefilter("ignore")
         opener = urllib.request.URLopener()
         opener.addheader("User-Agent", user_agent)
-    if "stock" in locals():
-        path = f"{stock}_downloads"
-    else:
-        path = "downloads"
     os.makedirs(path, exist_ok=True)
     for obj_url in tqdm(set(objects)):
         try:
@@ -300,4 +296,9 @@ if args.csv:
     stock_prices.to_csv(args.csv, index=False)
 if args.research:
     url = args.research
-    research(url)
+    if "stock" in locals():
+        path = f"{stock}-downloads"
+    else:
+        path = "downloads"
+    research(url, path)
+    
