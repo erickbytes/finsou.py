@@ -16,7 +16,7 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 
 **Example Stock Summary**
 
-`python finsou.py -s TXN`
+`python finsou.py -s MSFT`
 
 ![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
 
