@@ -80,13 +80,13 @@ def yahoo_finance_prices(url, stock):
     if "+" in ah_pct_change and ah_decimal_pct > 3:
         info.append("(+) AFTER HOURS MOVER")
     elif "-" in ah_pct_change and ah_decimal_pct > 3:
-        info.append("(!) AFTER HOURS SELL-OFF")  
+        info.append("(!) AFTER HOURS SELL-OFF")
     notice = soup.find_all(
         class_=re.compile("LineClamp\(2\) Va\(m\) Tov\(e\)")
     )
-    # Include special stock notices like dividend rate if shown.
+    # Include special stock notices like dividend announcments if shown.
     if notice:
-        message = f"($) Announcement: {notice[0].string}"
+        message = f"($) {notice[0].string}"
         info.append(message)
     try:
         post_mkt_price_tags = soup.find_all(
@@ -248,7 +248,7 @@ try:
     else:
         stocks = args.stocks.split(",")
 except TypeError:
-    stocks = []
+    stocks = list()
 prices = list()
 stocks = [stock.upper().strip() for stock in stocks]
 for stock in tqdm(stocks):
@@ -300,4 +300,3 @@ if args.research:
     else:
         path = "downloads"
     research(url, path)
-    
