@@ -84,7 +84,7 @@ def yahoo_finance_prices(url, stock):
     notice = soup.find_all(
         class_=re.compile("LineClamp\(2\) Va\(m\) Tov\(e\)")
     )
-    # Include special stock notices like dividend announcments if shown.
+    # Include special stock notices like dividend announcements if shown.
     if notice:
         message = f"($) {notice[0].string}"
         info.append(message)
