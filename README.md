@@ -1,5 +1,12 @@
 # finsou.py
 
+
+**Example Stock Summary**
+
+`python finsou.py -s PINS`
+
+![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
+
 The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Yahoo stock price info. With it, you can:
 
 - see market open, daily price action, market close and after hours summary for each stock in your terminal
@@ -13,13 +20,6 @@ The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Ya
 - After hours prices for "over the counter" (OTC) traded stocks are not listed on Yahoo.
 - Fetching a stock report takes about 3 seconds. After about 50 stock requests, you might get throttled on the HTTP request and there is a substantial delay.
 - Media is only downloaded if the investor website returns an HTML page. Sometimes, websites return Javascript. When this is the case, a browser or Selenium is required to render the HTML.
-
-**Example Stock Summary**
-
-`python finsou.py -s PINS`
-
-![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
-
 
 To learn more details about this project, read my blog post [here](https://lofipython.com/making-a-yahoo-stock-price-summary-cli-with-python).
 
