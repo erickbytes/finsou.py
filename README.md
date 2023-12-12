@@ -74,7 +74,9 @@ SNAP
 - 0 to 1 = Undervalued
 - negative PEG = Caution
 
-> "A negative PEG ratio can mean one of two things:
+> "The PEG ratio is a financial metric that helps investors determine the value of a stock while factoring in the company’s expected earnings growth A PEG ratio of 1 is considered to be a good indicator of a stock’s true value and may indicate that a company is relatively undervalued 231.
+In general, a PEG ratio of less than 1 is considered to be an indicator of a stock’s true value and may indicate that a company is relatively undervalued 231. Conversely, a PEG ratio of greater than 1 is generally considered unfavorable, suggesting a stock is overvalued,
+A negative PEG ratio can mean one of two things:
 either the P/E ratio of the stock is negative, meaning that the company is losing money,
 or
 the estimated growth rate for future earnings is negative,
