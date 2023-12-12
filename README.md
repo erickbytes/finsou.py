@@ -1,6 +1,6 @@
 # finsou.py
 
-The finsou.py CLI uses Python's html.parser, Beautiful Soup, regex, and [yfinance](https://pypi.org/project/yfinance/) to parse Yahoo stock price info. Available to use daily after 3 PM Central Standard Time, or anytime when the regular market is closed.
+The finsou.py CLI uses Python's html.parser, Beautiful Soup, regex, and [yfinance](https://pypi.org/project/yfinance/) to parse Yahoo stock price info. Available to use daily after 3 PM Central Standard Time, or anytime when the regular US stock market is closed.
 
 **Example Stock Summary**
 
@@ -14,9 +14,9 @@ With it, you can:
 - see upcoming earnings date and ex-dividend date
 - export price summaries queried to csv
 - download earnings reports and media with urllib
+- view PEG ratio and its implications for stock's current valuation
 
 **Caveats**
-- After hours only. This tool only currently works after the market has closed normal market hours.
 - After hours prices for "over the counter" (OTC) traded stocks are not listed on Yahoo.
 - Fetching a stock report takes about 3 seconds. After about 50 stock requests, you might get throttled on the HTTP request and there is a substantial delay.
 - Media is only downloaded if the investor website returns an HTML page. Sometimes, websites return Javascript. When this is the case, a browser or Selenium is required to render the HTML.
