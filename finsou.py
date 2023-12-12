@@ -13,7 +13,7 @@ from tqdm import tqdm
 # Chose to delay import only if csv argument given: import pandas as pd
 
 
-def yahoo_finance_prices(url, stock):
+def yahoo_finance_prices(url, stock, fast):
     """Parse Yahoo Finance HTML price and after hours price info.
     Use Beautiful Soup + regex compile to select span tags with price values.
 
@@ -82,9 +82,7 @@ def yahoo_finance_prices(url, stock):
         info.append("(+) AFTER HOURS MOVER")
     elif "-" in ah_pct_change and ah_decimal_pct > 3:
         info.append("(!) AFTER HOURS SELL-OFF")
-    notice = soup.find_all(
-        class_=re.compile("LineClamp\(2\) Va\(m\) Tov\(e\)")
-    )
+    notice = soup.find_all(class_=re.compile("LineClamp\(2\) Va\(m\) Tov\(e\)"))
     # Include special stock notices like dividend announcements if shown.
     if notice:
         message = f"($) {notice[0].string}"
@@ -134,9 +132,7 @@ def yahoo_finance_prices(url, stock):
             ex_dividend_date = ex_dividend_date_tag[1].string
         except:
             ex_dividend_date = "N/A"
-    company_name = soup.find_all(
-        class_=re.compile("D\(ib\) Fz\(18px\)")
-    )
+    company_name = soup.find_all(class_=re.compile("D\(ib\) Fz\(18px\)"))
     if company_name:
         company_name = company_name[0].string
     pe_ratio = [tag for tag in table_tags if "PE_RATIO" in str(tag)]
@@ -150,10 +146,15 @@ def yahoo_finance_prices(url, stock):
     else:
         dividend_yield = "N/A"
     alerts = "\n".join(info)
-    try:
-        peg_ratio, trailing_peg_ratio, company_name = stock_peg_ratio(stock)
-    except KeyError:
-        peg_ratio = "#N/A"
+    # Skip yfinance PEG ratio lookup if fast flag is passed.
+    if fast:
+        peg_ratio = "--fast skips yfinance lookup."
+        pass
+    else:
+        try:
+            peg_ratio, trailing_peg_ratio, company_name = stock_peg_ratio(stock)
+        except KeyError:
+            peg_ratio = "#N/A"
     summary = f"""\n
     {company_name}
     {alerts}
@@ -221,7 +222,7 @@ def research(url, path):
         try:
             obj = obj_url.split("/")[-1]
             with requests.get(obj_url, headers=headers, stream=True) as response:
-                with open(f"{path}/{obj}", 'wb') as file_handle:
+                with open(f"{path}/{obj}", "wb") as file_handle:
                     file_handle.write(response.content)
             rprint(f"[deep_sky_blue2]New media file saved: {obj}[/deep_sky_blue2]")
         except urllib.error.HTTPError:
@@ -259,13 +260,16 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-s", "--stocks", help="comma sep. stocks or portfolio.txt")
 parser.add_argument("-c", "--csv", help='set csv export with "your_csv.csv"')
 parser.add_argument("-r", "--research", help="accepts investor relations website url")
+parser.add_argument("-f", "--fast", help="accepts investor relations website url")
 args = parser.parse_args()
 try:
     if ".txt" in args.stocks:
         with open(args.stocks, "r") as f:
             stocks = f.readlines()
         stocks = [line.strip() for line in stocks if line.isspace() is not True]
-        rprint(f"\n[deep_sky_blue2]Loaded stocks from {args.stocks}.[/deep_sky_blue2]\n")
+        rprint(
+            f"\n[deep_sky_blue2]Loaded stocks from {args.stocks}.[/deep_sky_blue2]\n"
+        )
     else:
         stocks = args.stocks.split(",")
 except TypeError:
@@ -275,7 +279,7 @@ stocks = [stock.upper().strip() for stock in stocks]
 for stock in tqdm(stocks):
     url = f"https://finance.yahoo.com/quote/{stock}/"
     try:
-        summary, ah_pct_change = yahoo_finance_prices(url, stock)
+        summary, ah_pct_change = yahoo_finance_prices(url, stock, args.fast)
         prices.append([stock, summary, url, ah_pct_change])
         rprint(f"[steel_blue]{url}[/steel_blue]\n")
         # Added time delay between each request to avoid too many hits too fast.
@@ -294,6 +298,7 @@ for stock in tqdm(stocks):
 if args.csv:
     # Importing here shaves 1 second off the CLI when CSV is not required.
     import pandas as pd
+
     cols = ["Stock", "Price_Summary", "URL", "AH_%_Change"]
     stock_prices = pd.DataFrame(prices, columns=cols)
     stock_prices["Percent_Change"] = (

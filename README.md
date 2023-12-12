@@ -40,6 +40,7 @@ pip install yfinance
 |-----:|-----------|-----------------------------------------------------------------------------|
 |   -s | --stocks  | accepts stock ticker, comma delimited string of stocks or portfolio.txt     |
 |   -c | --csv     | write csv summary to given file, ex: "csv_name.csv"                         |
+|   -f | --fast| pass 1 to this flag to disable yfinance PEG lookup       |
 |   -r | --research| accepts investor resources url, downloads PDF, docx, csv, xlsx + mp3        |
 |   -h | --help    | show help message and exit  						                         |
 
@@ -52,7 +53,7 @@ python finsou.py -s SPOT,DDOG,NET
 python finsou.py --stocks TSLA,MSFT,AAPL --csv "Prices Summary.csv"
 
 # Read a list of stocks from a text file with one ticker on each line.
-python finsou.py -s portfolio.txt -c "Portfolio Prices.csv"
+python finsou.py -s portfolio.txt -c "Portfolio Prices.csv" --fast 1
 
 # Scan investor relations site and download all media from urls.
 python finsou.py -s KO -r https://investors.coca-colacompany.com/financial-information/financial-results
