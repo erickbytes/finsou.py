@@ -31,6 +31,7 @@ pip install pandas
 pip install requests
 pip install rich
 pip install tqdm
+pip install yfinance
 ```
 
 **CLI Options**

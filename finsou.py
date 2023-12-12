@@ -5,6 +5,7 @@ import time
 import traceback
 import urllib
 import requests
+import yfinance as yf
 from bs4 import BeautifulSoup
 from decimal import Decimal
 from rich import print as rprint
@@ -149,6 +150,10 @@ def yahoo_finance_prices(url, stock):
     else:
         dividend_yield = "N/A"
     alerts = "\n".join(info)
+    try:
+        peg_ratio, trailing_peg_ratio, company_name = stock_peg_ratio(stock)
+    except KeyError:
+        peg_ratio = "#N/A"
     summary = f"""\n
     {company_name}
     {alerts}
@@ -166,6 +171,7 @@ def yahoo_finance_prices(url, stock):
     PE Ratio: {pe_ratio}
     Ex-Dividend Date: {ex_dividend_date}
     Forward Dividend & Yield: {dividend_yield}
+    PEG Ratio: {peg_ratio}
     """
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
     summary = "\n".join(lines)
@@ -228,6 +234,21 @@ def research(url, path):
             traceback.print_exc()
             rprint(f"[deep_sky_blue2]Failed due to invalid url: {obj}[/deep_sky_blue2]")
     return None
+
+
+def stock_peg_ratio(ticker):
+    """Returns the PEG ratio of a stock.
+    The 'PEG ratio' (price/earnings to growth ratio) is a valuation metric
+    for determining the relative trade-off between the price of a stock,
+    the earnings generated per share (EPS), and the company's expected growth
+
+    The Trailing P/E Ratio is calculated by dividing a company's
+    current share price by its most recent reported earnings per share (EPS)."""
+    stock_info = yf.Ticker(ticker).info
+    peg_ratio = stock_info["pegRatio"]
+    trailing_peg_ratio = stock_info["trailingPegRatio"]
+    company_name = stock_info["shortName"]
+    return peg_ratio, trailing_peg_ratio, company_name
 
 
 parser = argparse.ArgumentParser(
