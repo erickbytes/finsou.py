@@ -1,6 +1,6 @@
 # finsou.py
 
-The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Yahoo stock price info. Can be used daily after 3 PM Central Standard Time, when the regular market closes.
+The finsou.py CLI uses Python's html.parser, Beautiful Soup, regex, and [yfinance](https://pypi.org/project/yfinance/) to parse Yahoo stock price info. Available to use daily after 3 PM Central Standard Time, or anytime when the regular market is closed.
 
 **Example Stock Summary**
 
