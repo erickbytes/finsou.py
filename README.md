@@ -70,9 +70,9 @@ SNAP
 ```
 
 PEG Ratio Scale
-greater than 1 = Overvalued
-0 to 1 = Undervalued
-negative PEG = Caution
+- greater than 1 = Overvalued
+- 0 to 1 = Undervalued
+- negative PEG = Caution
 
 'A negative PEG ratio can mean one of two things:
 either the P/E ratio of the stock is negative, meaning that the company is losing money,
