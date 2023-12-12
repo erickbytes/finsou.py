@@ -1,6 +1,6 @@
 # finsou.py
 
-The finsou.py CLI uses Python's html.parser, Beautiful Soup, regex, and [yfinance](https://pypi.org/project/yfinance/) to parse Yahoo stock price info. Available to use daily after 3 PM Central Standard Time, or anytime when the regular US stock market is closed.
+The finsou.py CLI uses Python's html.parser, [Beautiful Soup](https://pypi.org/project/beautifulsoup4/), regex and [yfinance](https://pypi.org/project/yfinance/) to parse Yahoo stock price info. Available to use daily after 3 PM Central Standard Time, or anytime when the regular US stock market is closed.
 
 **Example Stock Summary**
 
@@ -18,11 +18,8 @@ With it, you can:
 
 **Caveats**
 - After hours prices for "over the counter" (OTC) traded stocks are not listed on Yahoo.
-- Fetching a stock report takes about 3 seconds. After about 50 stock requests, you might get throttled on the HTTP request and there is a substantial delay.
+- Fetching a stock report takes about 1-3 seconds.
 - Media is only downloaded if the investor website returns an HTML page. Sometimes, websites return Javascript. When this is the case, a browser or Selenium is required to render the HTML.
-
-To learn more details about this project, read my blog post [here](https://lofipython.com/making-a-yahoo-stock-price-summary-cli-with-python).
-
 
 **Install Python Library Dependencies**
 ```
@@ -70,7 +67,7 @@ SNAP
 
 **Interpreting PEG Ratio**
 - greater than 1 = Overvalued
-- 0 to 1 = Undervalued
+- 0 to near 1 = Undervalued
 - negative = Caution
 
 Understanding PEG Ratio, [Bing](https://bing.com):
@@ -87,3 +84,5 @@ a business to be in, and the possible gains that could be made by gambling
 on a comeback story usually aren’t enough to justify the enormous risk you
 take by investing in this kind of situation.However, if a company’s growth is negative, it could be something you want to avoid, but it is not necessarily a bad sign.
 The implications for a negative PEG ratio depend on the reason behind the negative PEG ratio."
+
+To learn more details about this project, read my blog post [here](https://lofipython.com/making-a-yahoo-stock-price-summary-cli-with-python).
