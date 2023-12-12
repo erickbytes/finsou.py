@@ -169,9 +169,9 @@ def yahoo_finance_prices(url, stock, fast):
     Post Market $ Close: {post_mkt_price}
     -----------------------------
     Earnings Date: {earnings_date}
-    PE Ratio: {pe_ratio}
     Ex-Dividend Date: {ex_dividend_date}
     Forward Dividend & Yield: {dividend_yield}
+    PE Ratio: {pe_ratio}
     PEG Ratio: {peg_ratio}
     """
     lines = [line.strip() for line in summary.splitlines() if not line.isspace()]
