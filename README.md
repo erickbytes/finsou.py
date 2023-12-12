@@ -1,6 +1,6 @@
 # finsou.py
 
-The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Yahoo stock price info.
+The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Yahoo stock price info. Can be used daily after 3 PM Central Standard Time, when the regular market closes.
 
 **Example Stock Summary**
 
@@ -72,7 +72,7 @@ SNAP
 **Interpreting PEG Ratio**
 - greater than 1 = Overvalued
 - 0 to 1 = Undervalued
-- negative PEG = Caution
+- negative = Caution
 
 > "The PEG ratio is a financial metric that helps investors determine the value of a stock while factoring in the company’s expected earnings growth. A PEG ratio of 1 is considered to be a good indicator of a stock’s true value and may indicate that a company is relatively undervalued.
 In general, a PEG ratio of less than 1 is considered to be an indicator of a stock’s true value and may indicate that a company is relatively undervalued. Conversely, a PEG ratio of greater than 1 is generally considered unfavorable, suggesting a stock is overvalued.
