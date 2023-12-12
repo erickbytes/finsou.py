@@ -1,5 +1,6 @@
 # finsou.py
 
+The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Yahoo stock price info.
 
 **Example Stock Summary**
 
@@ -7,8 +8,7 @@
 
 ![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
 
-The finsou.py CLI uses Python's html.parser + Beautiful Soup + regex to parse Yahoo stock price info. With it, you can:
-
+With it, you can:
 - see market open, daily price action, market close and after hours summary for each stock in your terminal
 - see a color coded report, green or red, based on the sum of regular market + after hours price moves
 - see upcoming earnings date and ex-dividend date
@@ -74,7 +74,7 @@ PEG Ratio Scale
 - 0 to 1 = Undervalued
 - negative PEG = Caution
 
-'A negative PEG ratio can mean one of two things:
+"A negative PEG ratio can mean one of two things:
 either the P/E ratio of the stock is negative, meaning that the company is losing money,
 or
 the estimated growth rate for future earnings is negative,
@@ -88,4 +88,6 @@ take by investing in this kind of situation.
 
 However, if a company’s growth is negative, it could be something you want to avoid,
 but it is not necessarily a bad sign. The implications for a negative PEG ratio
-depend on the reason behind the negative PEG ratio.' - Bing
+depend on the reason behind the negative PEG ratio."
+
+- Bing

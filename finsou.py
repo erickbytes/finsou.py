@@ -266,11 +266,11 @@ def stock_peg_ratio(ticker):
     trailing_peg_ratio = stock_info["trailingPegRatio"]
     company_name = stock_info["shortName"]
     if peg_ratio > 1:
-        peg_ratio = str(peg_ratio) + " (*) Overvalued"
+        peg_ratio = str(peg_ratio) + "\nPEG Rating: Overvalued"
     elif peg_ratio < 0:
-        peg_ratio = str(peg_ratio) + " (!) Caution"
+        peg_ratio = str(peg_ratio) + "\nPEG Rating: Negative Earnings"
     elif peg_ratio <= 1:
-        peg_ratio = str(peg_ratio) + " ($) Undervalued"
+        peg_ratio = str(peg_ratio) + "\nPEG Rating: ($) Undervalued"
     return peg_ratio, trailing_peg_ratio, company_name
 
 
