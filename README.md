@@ -59,15 +59,14 @@ python finsou.py -s portfolio.txt -c "Portfolio Prices.csv" --fast 1
 python finsou.py -s KO -r https://investors.coca-colacompany.com/financial-information/financial-results
 ```
 
-![media download example](media-download-example.png "Download Financial Reports and Media")
-
-
 **Example portfolio.txt contents:**
 ```
 META
 PINS
 SNAP
 ```
+
+![media download example](media-download-example.png "Download Financial Reports and Media")
 
 **Interpreting PEG Ratio**
 - greater than 1 = Overvalued
