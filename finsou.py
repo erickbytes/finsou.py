@@ -238,29 +238,14 @@ def research(url, path):
 
 
 def stock_peg_ratio(ticker):
-    """Returns the PEG ratio of a stock.
-    The 'PEG ratio' (price/earnings to growth ratio) is a valuation metric
-    for determining the relative trade-off between the price of a stock,
-    the earnings generated per share (EPS), and the company's expected growth
+    """Returns the PEG ratio of a stock and a message of its possible meaning
+    for the stock's current price.
 
-    The Trailing P/E Ratio is calculated by dividing a company's
-    current share price by its most recent reported earnings per share (EPS).
-
-    'A negative PEG ratio can mean one of two things:
-    either the P/E ratio of the stock is negative, meaning that the company is losing money,
-    or
-    the estimated growth rate for future earnings is negative,
-    indicating that the earnings of the company are expected to decrease in the future.
-
-    If the PEG ratio is negative because of a negative P/E ratio, it is generally
-    considered to be a bad sign. Negative earnings are an extremely risky place f
-    or a business to be in, and the possible gains that could be made by gambling
-    on a comeback story usually aren’t enough to justify the enormous risk you
-    take by investing in this kind of situation.
-
-    However, if a company’s growth is negative, it could be something you want to avoid,
-    but it is not necessarily a bad sign. The implications for a negative PEG ratio
-    depend on the reason behind the negative PEG ratio.' - Bing"""
+    Interpreting PEG Ratio Scale derived from Bing:
+    Overvalued: greater than 1
+    Undervalued: 0 to 1
+    Caution: negative
+    """
     stock_info = yf.Ticker(ticker).info
     peg_ratio = stock_info["pegRatio"]
     trailing_peg_ratio = stock_info["trailingPegRatio"]
