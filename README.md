@@ -18,7 +18,7 @@ See stock price reports in your terminal:
 
 **Caveats**
 - After hours prices for "over the counter" (OTC) traded stocks are not listed on Yahoo.
-- Fetching a stock report takes about 1-3 seconds.
+- Fetching a stock report takes about 1-3 seconds on a fast, stable Wi-Fi connection.
 - Media is only downloaded if the investor website returns an HTML page. Sometimes, websites return Javascript. When this is the case, a browser or Selenium is required to render the HTML.
 
 **Install Python Library Dependencies**
