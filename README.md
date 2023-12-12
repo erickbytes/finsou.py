@@ -69,25 +69,23 @@ PINS
 SNAP
 ```
 
-PEG Ratio Scale
+**Interpreting PEG Ratio**
 - greater than 1 = Overvalued
 - 0 to 1 = Undervalued
 - negative PEG = Caution
 
-"A negative PEG ratio can mean one of two things:
+> "A negative PEG ratio can mean one of two things:
 either the P/E ratio of the stock is negative, meaning that the company is losing money,
 or
 the estimated growth rate for future earnings is negative,
 indicating that the earnings of the company are expected to decrease in the future.
-
 If the PEG ratio is negative because of a negative P/E ratio, it is generally
 considered to be a bad sign. Negative earnings are an extremely risky place f
 or a business to be in, and the possible gains that could be made by gambling
 on a comeback story usually aren’t enough to justify the enormous risk you
 take by investing in this kind of situation.
-
 However, if a company’s growth is negative, it could be something you want to avoid,
 but it is not necessarily a bad sign. The implications for a negative PEG ratio
 depend on the reason behind the negative PEG ratio."
 
-- Bing
+\- Bing

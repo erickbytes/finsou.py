@@ -268,7 +268,7 @@ def stock_peg_ratio(ticker):
     if peg_ratio > 1:
         peg_ratio = str(peg_ratio) + " (Overvalued)"
     elif peg_ratio < 0:
-        peg_ratio = str(peg_ratio) + " (Negative Earnings)"
+        peg_ratio = str(peg_ratio) + " (Negative Earnings Growth)"
     elif peg_ratio <= 1:
         peg_ratio = str(peg_ratio) + " (Undervalued)"
     return peg_ratio, trailing_peg_ratio, company_name
