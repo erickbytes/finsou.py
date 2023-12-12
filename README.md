@@ -1,6 +1,6 @@
 # finsou.py
 
-The finsou.py CLI uses Python's html.parser, [Beautiful Soup](https://pypi.org/project/beautifulsoup4/), regex and [yfinance](https://pypi.org/project/yfinance/) to parse Yahoo stock price info. Available to use daily after 3 PM Central Standard Time, or anytime when the regular US stock market is closed.
+The finsou.py CLI uses Python's [html.parser](https://docs.python.org/3/library/html.parser.html), [Beautiful Soup](https://pypi.org/project/beautifulsoup4/), [regex](https://docs.python.org/3/library/re.html) and [yfinance](https://pypi.org/project/yfinance/) to parse Yahoo stock price info. Available to use daily after 3 PM Central Standard Time, or anytime when the regular US stock market is closed.
 
 **Example Stock Summary**
 
@@ -8,13 +8,13 @@ The finsou.py CLI uses Python's html.parser, [Beautiful Soup](https://pypi.org/p
 
 ![stock summary example](stock-summary-example.png "Fetch a Stock Summary")
 
-With it, you can:
-- see market open, daily price action, market close and after hours summary for each stock in your terminal
-- see a color coded report, green or red, based on the sum of regular market + after hours price moves
-- see upcoming earnings date and ex-dividend date
+See stock price reports in your terminal:
+- market open, daily price action, market close and after hours summary for each stock in your terminal
+- color coded report, green or red, based on the sum of regular market + after hours price moves
+- upcoming earnings date and ex-dividend date
+- PEG ratio and its implications for stock's current valuation
 - export price summaries queried to csv
 - download earnings reports and media with urllib
-- view PEG ratio and its implications for stock's current valuation
 
 **Caveats**
 - After hours prices for "over the counter" (OTC) traded stocks are not listed on Yahoo.
